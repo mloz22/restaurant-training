@@ -1,0 +1,62 @@
+rice
+cilantro
+beans (whole beans)
+beans (refried beans)
+beans (black beans)
+beans (frijoles charros)
+beans (frijoles de olla)
+cheese (cheddar)
+cheese (white)
+cheese (parmesean)
+cheese (cream cheese)
+lettuce
+pico de gallo
+diced tomatoes
+ground beef
+shredded beef
+shredded chicken
+carne asada
+barbacoa
+shredded pork
+tortilla (flour tortilla)
+tortilla (corn tortilla)
+fideo
+nopales
+avocado
+spinach
+sour cream
+frijoles de la olla
+papas y chorizo
+chorizo
+fried papas
+onions
+garlic
+salt
+shrimp
+calamari
+guacamole
+cucumber
+steak chunks
+beef tenderloin
+egg
+hominy
+honeycomb tripe
+chile relleno
+mushroom (portabella)
+chile con queso
+sauce (pork sauce)
+sauce (chile verde)
+sauce (sun-dried red pepper sauce)
+sauce (raspberry chipotle sauce)
+sauce (zesty seafood sauce)
+tilapia
+pollock
+beef tenderloin
+lime
+lime juice
+egg batter
+pepper (jalapeno)
+pepper (black pepper)
+pepper (anaheim)
+pepper (habanero)
+pepper (bell pepper)
