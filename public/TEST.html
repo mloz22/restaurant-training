@@ -8,7 +8,7 @@
             font-family: "Courier New", monospace;
             text-align: center;
         }
-		
+
 		#display{
 		margin: 0 auto;
 		max-height: 800px;
@@ -21,20 +21,20 @@
 		background-color: #e6f2ff;
 		height: 20vh;
 		width: 100%;
-		min-height: 100px;		
+		min-height: 100px;
 		}
-		
+
 		.profile{
 		background-color: #F8F8F8 ;
 		margin: 0;
 		padding: 0;
 		height: 20vh;
-		width: 25%;	
+		width: 25%;
 		position: relative;
 		float: left;
 		min-height: 100px;
 		}
-		
+
 		.categories{
 		background-color: blue;
 		flex-direction: column;
@@ -45,43 +45,43 @@
 		width: 50%;
 		min-height: 100px;
 		}
-		
+
 		.main-category{
 		background-color: #F0F0F0 ;
 		position: relative;
 		display: block;
 		float: left;
 		height: 10vh;
-		width: 100%;		
+		width: 100%;
 		min-height: 50px;
 		}
-		
+
 		.sub-category{
 		background-color: #E8E8E8 ;
 		position: relative;
 		display: block;
 		float: left;
 		height: 10vh;
-		width: 100%;		
-		min-height: 50px;	
+		width: 100%;
+		min-height: 50px;
 		}
-		
+
 		.settings{
 		background-color: #F8F8F8 ;
 		height: 20vh;;
-		width: 25%;	
+		width: 25%;
 		position: relative;
 		float: left;
 		min-height: 100px;
 		}
-		
-		
+
+
 		#middle {
 		background-color: #ffe6ff;
 		height: 60px;
 		width: 100%;
 		}
-		
+
 		.scoreboard{
 		background-color: #purple ;
 		height: 100%;
@@ -96,47 +96,47 @@
 		width: 50%;
 		float: left;
 		}
-		
+
 		.timer{
 		background-color: #D0D0D0;
 		position: relative;
 		float: right;
 		width: 50%;
 		}
-		
+
 		.controls{
 		background-color: #C8C8C8  ;
 		height: 100%;
-		width: 50%;		
+		width: 50%;
 		position: relative;
 		float: right;
 
 		}
-		
+
 		#bottom{
 		background-color: #fff2e6;
 		height: 70vh;
 		width: 100%;
 		}
-		
+
 		.questions{
 		background-color: #B8B8B8  ;
 		height: 57vh;
 		width: 50%;
 		position: relative;
 		float: left;
-		min-height: 300px;	
+		min-height: 300px;
 		}
-		
+
 		.answer-options{
 		background-color: #A8A8A8  ;
 		height: 57vh;
 		width: 50%;
 		position: relative;
 		float: right;
-		min-height: 300px;		
+		min-height: 300px;
 		}
-		
+
 		.submit{
 		float: left;
 		background-color: #989898 ;
@@ -145,12 +145,15 @@
 		min-height: 70px;
         bottom: 0;
 		}
-		
+
     </style>
+
+	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+
 </head>
 <body >
 	<div id="display">
-	
+
 		<div id="top">
 
 				<div class="profile">
@@ -163,7 +166,7 @@
 						<div>
 							<div class="main-category">
 								<h1>
-									Main-Category			
+									Main-Category
 										<select>
 										<option>1</option>
 										<option>2</option>
@@ -184,7 +187,7 @@
 					</div>
 
 				<div class="settings">
-				<img src="images/settings.png" height="40px" width="40px"/>	
+				<img src="images/settings.png" height="40px" width="40px"/>
 				<img src="images/mute.png" height="40px" width="40px"/>
 					<h2>
 						Settings
@@ -194,88 +197,91 @@
 							<option>type of questions</option>
 							<option>x</option>
 							<option>y</option>
-							<option>z</option>							
+							<option>z</option>
 							</select>
 					</h2>
-			
+
 				</div>
-		
+
 		</div>
-		
+
 		<div id="middle">
-		
+
 			<div class="scoreboard">
-			
+
 				<div class="score">
 					<h2>
 						Score
 					</h2>
 				</div>
-				
+
 				<div class="timer">
 					<h2>
 						Timer
 					</h2>
 				</div>
-				
+
 			</div>
-			
+
 			<div class="controls">
-			
+
 				<img src="images/controls_snip.png" height="50px" width="180px"/>
 
-				
+
 				<button>Play/Pause</button>
 				<button>skip</button>
-	
+
 				<button>Quit</button>
-				
+
 				<h2>
 					Controls
 				</h2>
 			</div>
-		
+
 		</div>
 
 		<div id="bottom">
-		
-			<div class="questions">
+
+			<div id = "question" class="questions">
 				<h2>
 					Test Question
 				</h2>
 				<h3>
 					TORF,SATA, or SA
 				</h3>
-				
+
 				<h4>
 					Actual Question
 				</h4>
 
 			</div>
-			
-			<div class="answer-options">
-				<h2> 
+
+			<div id="answer" class="answer-options">
+				<h2>
 					Answer Bank
 				</h2>
-				
+
 				<h3>
 					Answer instructions
 				</h3>
-				
+
 				<h4>
 					Answer-Options
 				</h4>
 			</div>
-			
+
 			<div class="submit">
 				<h2>
 					Submit Answer
 				</h2>
 				<button>Submit</button>
 			</div>
-			
+
 		</div>
-	
+
 	</div>
 </body>
+
+<script type="text/javascript" src="init.js"></script>
+
 </html>

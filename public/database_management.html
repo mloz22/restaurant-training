@@ -17,52 +17,55 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 	</style>
+
+	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+
 </head>
 <body>
 
-	<h1>
+	<h1 id="database_management">
 		Database_Manager.html
 	</h1>
-	
 
 
-	
+
+
 		<a href="account.html">Account Info</a>
 		<a href="faq.html">FAQ</a>
 		<a href="database_management.html">Database</a>
 		<a href="index.html">Logout</a>
-		
+
 	<h2>
 		Employee Name
 	</h2>
-		
-	
+
+
 	<h2>
 		Database
 	</h2>
-	
+
 	<form>
 		<table>
 			<tr>
 				<th>
 					Categories
 				</th>
-				
+
 				<th>
 					Description
 				</th>
-				
+
 				<th>
 					Action
 				</th>
-				
+
 			</tr>
-				
+
 			<tr>
 				<td>
 					Food
 				</td>
-				
+
 				<td>
 					Food description x select list
 					<br>
@@ -71,16 +74,16 @@ tr:nth-child(even) {
 
 				<td>
 					<button onclick="location.href='view_categories.html'" type="button"> View</button>
-					
+
 				</td>
 			</tr>
-			
+
 			<tr>
-			
+
 				<td>
 					Drinks
 				</td>
-				
+
 				<td>
 					Drinks description x select list
 					<br>
@@ -91,12 +94,12 @@ tr:nth-child(even) {
 					<button onclick="location.href='view_categories.html'" type="button"> View</button>
 				</td>
 			</tr>
-			
+
 			<tr>
 				<td>
-					Employees 
+					Employees
 				</td>
-				
+
 				<td>
 					Employees description x select list
 					<br>
@@ -105,16 +108,16 @@ tr:nth-child(even) {
 
 				<td>
 					<button onclick="location.href='view_categories.html'" type="button"> View</button>
-					
+
 				</td>
 			</tr>
-			
-						
+
+
 			<tr>
 				<td>
 					<a href="test.html">Test </a>
 				</td>
-				
+
 				<td>
 					Test description x select list
 					<br>
@@ -124,9 +127,9 @@ tr:nth-child(even) {
 				<td>
 					<button onclick="location.href='questions.html'" type="button"> Edit Test</button>	</td>
 			</tr>
-			
+
 		</table>
 	</form>
-
+	<script type="text/javascript" src="init.js"></script>
 </body>
 </html>
