@@ -1,7 +1,7 @@
 {
 	"ingredients" :{
 		"ingredient_name" : "name",
-		"description"     : "name",
+		"food_group"     : "name",
 		"allergen"        : "name",
 		"spicy_or_not"    : "name"
 	},
@@ -15,11 +15,13 @@
 		},
 
 		"appetizers" : {
-			"app_item" : {"$ref": "#/menu/menu_item"}
+			"app_item" : "",
+			"ingredients" : true
 		},
 
 		"specials"   : {
-			"specials_item" : {"$ref": "#/menu/menu_item"}
+			"specials_item" : "",
+			"ingredients" : true
 		}
 
 

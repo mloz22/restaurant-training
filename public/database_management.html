@@ -17,8 +17,12 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 	</style>
-
-	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="basic_layout.css">
+	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -33,7 +37,11 @@ tr:nth-child(even) {
 		<a href="account.html">Account Info</a>
 		<a href="faq.html">FAQ</a>
 		<a href="database_management.html">Database</a>
-		<a href="index.html">Logout</a>
+
+
+		<button id="btnLogout" class= "btn btn-action">
+			Logout
+		</button>
 
 	<h2>
 		Employee Name
@@ -130,6 +138,6 @@ tr:nth-child(even) {
 
 		</table>
 	</form>
-	<script type="text/javascript" src="init.js"></script>
+	<script type="text/javascript" src="logged_in.js"></script>
 </body>
 </html>

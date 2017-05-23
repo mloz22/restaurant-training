@@ -1,37 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-	</style>
-	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="basic_layout.css">
+	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
-	<h1 id="homepage" role="banner">
+	<h1 id="homepage" >
 	</h1>
 
-	</h1>
 
-		<h2 role="Login">
+	<div class="container">
+		<div id= "error">
+		</div>
+		<label>
+			Email:
+			<input id="txtEmail" type = "email" placeholder="Email"></input>
+		</label>
+
+		<label>
+			Password:
+			<input id="txtPassword" type="password" placeholder="Password"></input>
+		</label>
+<!--
+		<label>
+			Email
+
+		</label>
+		<input id="txtEmail" type = "email" placeholder="Email"></input>
+		<br>
+		<label id="verifyEmail" class="hide">
+			Verify Email
+
+		</label>
+		<input id="verifyEmail" type = "email" placeholder="Verify Email" class = "hide"></input>
+		<br id="verifyEmail" class="hide">
+		<label>
+			Pssw
+		</label>
+
+		<input id="txtPassword" type="password" placeholder="Password"></input>
+		<br>
+
+		<label id="verifyPassword" class="hide">
+			Verify Password
+		</label>
+
+		<input id="verifyPassword" type="password" placeholder="Verify Password" class = "hide"></input>
+		<br  id="verifyPassword" class="hide">
+-->
+		<button id="btnLogin" class="btn btn-action">
 			Login
-		</h2>
+		</button>
 
-	<form>
-		<label>
-			Name
-		</label>
+		<button id="btnSignUp" class = "btn btn-secondary">
+			Sign Up
+		</button>
 
-		<input type = "text"></input>
 
-		<label>
-			Password
-		</label>
 
-		<input type="password"></input>
 
-		<button onclick="location.href='database_management.html'" type="button">Login</button>
-	</form>
-
-	<script type="text/javascript" src="init.js"></script>
+		<!--<button id="btnAnon" class = "btn btn-action hide">Test it anonymously</button>
+		-->
+	</div>
+	<script src="init.js"></script>
 </body>
 </html>
