@@ -2,24 +2,17 @@
 <html>
 <head>
 	<style>
-	table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
+	.emphasis{
+		border:2px solid black;
+	}
 	</style>
-
-		<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/basic_layout.css">
+	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -27,73 +20,122 @@ tr:nth-child(even) {
 	<h1 id="account">
 	</h1>
 
-
-
-
-		<button id="btnLogout" class= "btn btn-action">
-			Cancel
-		</button>
+	<h2>
+		Sign up
+	</h2>
+	<p>
+		<strong>Under Construction:</strong> Just Sign up with the <strong><em>BOLD</em></strong> items <strong><em>Email</em></strong> and <strong><em>Password</em></strong>. Thanks! :)
+	<p>
+	<button id="btnCancel" class= "btn btn-action" onclick="location.href='index.html'">
+		Cancel
+	</button>
+	<div id= "error">
+	</div>
 
 	<h2>
-		Employee Name
+		<strong>Email</strong> <input id="txtEmail" class = "emphasis" type = "email" placeholder ="Email"></input>
+	</h2>
+	<h2>
+		Verify Email <input id="txtVerifyEmail" type = "email" placeholder ="Verify Email"></input>
+	</h2>
+	<h2>
+		<strong>Password</strong>
+			<input id="txtPassword" class = "emphasis" type ="password" placeholder="Password"></input>
+	</h2>
+	<h2>
+		Verify Password
+			<input id="txtVerifyPassword" type = "password" placeholder = "Verify Password"></input>
 	</h2>
 
+	<h2>
+		First Name 	<input id="signup_fn" type = "text" placeholder="First Name"></input>
+	</h2>
+	<h2>
+		Last Name <input id="signup_ln" type = "text" placeholder = "Last Name"></input>
+	</h2>
+	<h2>
+		Restaurant
+		<input id="restaurant_name" type = "text" placeholder="Restaurant Name"></input>
+	</h2>
+	<h2>
+		Amount of Locations
+		<select id="restaurant_locations">
+			<option>Just 1</option>
+			<option>Between 2 and 5</option>
+			<option>Between 6 and 10</option>
+			<option>Between 10 and 20</option>
+			<option>21 or more</option>
+		</select>
+	</h2>
 
-		<h2>
-			Profile Pic
-		</h2>
-		<img src="images/profile.png" height="100px" weight="100px" />
-			<h3>
-				request change
-			</h3>
+	<h2>
+		Address
+		<input id="restaurant_address_street_number" type = "text" placeholder="Street Address"></input>
+		<input id="restaurant_address_city" type = "text" placeholder="City"></input>
+		<select id="restaurant_address_state">
+			<option>AL</option>
+			<option>AK</option>
+			<option>AR</option>
+			<option>AZ</option>
+			<option>CA</option>
+			<option>CO</option>
+			<option>CT</option>
+			<option>DC</option>
+			<option>DE</option>
+			<option>FL</option>
+			<option>GA</option>
+			<option>HI</option>
+			<option>IA</option>
+			<option>ID</option>
+			<option>IL</option>
+			<option>IN</option>
+			<option>KS</option>
+			<option>KY</option>
+			<option>LA</option>
+			<option>MA</option>
+			<option>MD</option>
+			<option>ME</option>
+			<option>MI</option>
+			<option>MN</option>
+			<option>MO</option>
+			<option>MS</option>
+			<option>MT</option>
+			<option>NC</option>
+			<option>ND</option>
+			<option>NE</option>
+			<option>NH</option>
+			<option>NJ</option>
+			<option>NM</option>
+			<option>NY</option>
+			<option>NV</option>
+			<option>OH</option>
+			<option>OK</option>
+			<option>OR</option>
+			<option>PA</option>
+			<option>RI</option>
+			<option>SC</option>
+			<option>SD</option>
+			<option>TN</option>
+			<option>TX</option>
+			<option>UT</option>
+			<option>VA</option>
+			<option>VT</option>
+			<option>WI</option>
+			<option>WY</option>
+			<option>WA</option>
+			<option>WV</option>
+		</select>
 
-		<h2>
-			Name
-		</h2>
-			<h3>
-				request change
-			</h3>
+		<input id="restaurant_address_zip" type = "text" placeholder="Zip Code"></input>
+	</h2>
 
-		<h2>
-			Job Title(s)
-		</h2>
+	<h2>
+		Price: One Million Dollars!
+	</h2>
 
-		<h2>
-			Employee Number
-		</h2>
+	<button id="btnSignUp" type="button" class= "btn btn-action">Sign Up</button>
 
-		<h2>
-			Current Status
-		</h2>
+	<script type="text/javascript" src="scripts/signup.js"></script>
 
-			<h3>
-				Hours taken tests
-			</h3>
-
-			<h3>
-				last login
-			</h3>
-
-			<h3>
-				overall percentage
-			</h3>
-
-			<h3>
-				problem questions
-			</h3>
-
-			<h3>
-				pending review sections of tests
-			</h3>
-
-
-		<h2>
-
-		</h2>
-
-		<button onclick="location.href='test.html'" type="button"> view Test</button>	</td>
-
-
-	<script type="text/javascript" src="logged_in.js"></script>
 </body>
 </html>
