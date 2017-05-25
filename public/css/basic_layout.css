@@ -1,4 +1,17 @@
 
+body{
+    text-align: center;
+}
 #error {
     color: red;
+}
+#ex{
+    position: relative;
+    left: 42%;
+    width: 250px;
+}
+footer{
+    position: relative;
+    padding: 20px;
+    bottom: 0px;
 }

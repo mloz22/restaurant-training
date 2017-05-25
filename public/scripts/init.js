@@ -29,7 +29,7 @@ var dbRef_faq = firebase.database().ref().child('headings').child('faq');
 dbRef_faq.on('value', snap => faq.innerText = snap.val());
 */
 
-console.log('load success');
+console.log('init.js load success');
 	//Entry fields for Homepage
 	const txtEmail = document.getElementById('txtEmail');
 	const txtPassword = document.getElementById('txtPassword');
@@ -56,18 +56,18 @@ console.log('load success');
         promise.catch(e => error.innerHTML = e.message);
 
     });
+
 	//Add signup event
  	btnSignUp.addEventListener('click', e => {
         console.log('signup event listener');
         window.location = 'signup.html';
 	});
 
-
-
-	//Add a realtime listener
+    //Add a realtime listener
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if(firebaseUser){
-			console.log(firebaseUser + ' is logged in');
+            var userName = firebase.auth().currentUser.email;
+			console.log(userName + ' is logged in');
             error.style.color = "black"
             error.innerHTML = firebaseUser + " logged in";
             window.location = 'database_management.html';
@@ -77,17 +77,6 @@ console.log('load success');
 		}
 
 	});
-//
-//
-// /*
-// 	btnAnon.addEventListener('click', e={
-// 	//TODO: figure out how this works
-// 	if(!firebaseUser){
-// 	firebase.auth.signInAnonymously();
-// 	}
-// 	else{
-// 	firebase.auth.signOut();
-// 	}
-// 	*/
+
 
 }());

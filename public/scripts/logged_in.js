@@ -11,41 +11,37 @@
   };
   firebase.initializeApp(config);
 
+var userName = document.getElementById('userName');
 
 
+ console.log('logged_in.js load success');
+    //Entry fields for Homepage
+    const btnLogout = document.getElementById('btnLogout');
+    //const btnAnon = document.getElementById('btnAnon');
 
-
-
-firebase.auth().onAuthStateChanged(function(user){
-    if (user){
-        var displayName = user.displayName;
-        var userName = document.getElementById('user_name');
-        //TODO: Display user name as logged in
-        //displayName.on('value', snap => userName.innerText = snap.val());
-    }
-});
-
-console.log('reload success');
-	//Entry fields for Homepage
-	const txtEmail = document.getElementById('txtEmail');
-	const txtPassword = document.getElementById('txtPassword');
-
-	//Verification fields once sign up is selected
-	//const txtVerifyEmail = document.getElementById('verifyEmail');
-	//const txtVerifyPassword = document.getElementById('verifyPassword');
-console.log('step 1');
-	//Homepage button ids
-	const btnLogout = document.getElementById('btnLogout');
-	//const btnAnon = document.getElementById('btnAnon');
-console.log('step 2');
-
-console.log('step 5');
-	btnLogout.addEventListener('click', e => {
+    btnLogout.addEventListener('click', e => {
         console.log('clicked logout button');
-		firebase.auth().signOut();
+        firebase.auth().signOut();
         window.location = 'index.html';
 	});
-console.log('step 6');
+
 	//Add a realtime listener
+    firebase.auth().onAuthStateChanged(function(user){
+        if (user){
+            console.log(firebase.auth().currentUser.email);
+            userName.innerHTML = "logged in as: " + JSON.stringify(firebase.auth().currentUser.email);
+
+            //TODO: Display user name as logged in
+            //displayName.on('value', snap => userName.innerText = snap.val());
+        }
+        else if(btnLogout.addEventListener) {
+            console.log("btnLogout clicked");
+            firebase.auth().signOut();
+            window.location='index.html';
+        }
+        else{
+            //window.location='404.html';
+        }
+    });
 
 }());

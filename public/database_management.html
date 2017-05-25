@@ -5,6 +5,8 @@
 	table {
 	    font-family: arial, sans-serif;
 	    border-collapse: collapse;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	td, th {
@@ -36,15 +38,15 @@
 
 
 
+    <a href="account.html">Account</a>
+    <a href="faq.html">FAQ</a>
+    <a href="database_management.html">Database</a>
+    <a href="test.html">Test</a>
+    <a href="status.html">Status</a>
 
-		<a href="account.html">Account Info</a>
-		<a href="faq.html">FAQ</a>
-		<a href="database_management.html">Database</a>
-
-
-		<button id="btnLogout" class= "btn btn-action">
-			Logout
-		</button>
+	<button id="btnLogout" class= "btn btn-action">
+		Logout
+	</button>
 
 	<h2 id="userName">
 
@@ -55,92 +57,97 @@
 		Database
 	</h2>
 
-	<form>
-		<table>
-			<tr>
-				<th>
-					Categories
-				</th>
 
-				<th>
-					Description
-				</th>
+	<table>
+		<tr>
+			<th>
+				Categories
+			</th>
 
-				<th>
-					Action
-				</th>
+			<th>
+				Description
+			</th>
 
-			</tr>
+			<th>
+				Action
+			</th>
 
-			<tr>
-				<td>
-					Food
-				</td>
+		</tr>
 
-				<td>
-					Food description x select list
-					<br>
-					[all food, apps, soups/salads, specials, desserts]
-				</td>
+		<tr>
+			<td>
+				Food
+			</td>
 
-				<td>
-					<button onclick="location.href='view_categories.html'" type="button"> View</button>
+			<td>
+				Food description x select list
+				<br>
+				[all food, apps, soups/salads, specials, desserts]
+			</td>
 
-				</td>
-			</tr>
+			<td>
+				<button onclick="location.href='view_categories.html'" type="button"> View</button>
 
-			<tr>
+			</td>
+		</tr>
 
-				<td>
-					Drinks
-				</td>
+		<tr>
 
-				<td>
-					Drinks description x select list
-					<br>
-					[all drinks, non-alc, liquor, beer, wine, cocktails]
-				</td>
+			<td>
+				Drinks
+			</td>
 
-				<td>
-					<button onclick="location.href='view_categories.html'" type="button"> View</button>
-				</td>
-			</tr>
+			<td>
+				Drinks description x select list
+				<br>
+				[all drinks, non-alc, liquor, beer, wine, cocktails]
+			</td>
 
-			<tr>
-				<td>
-					Employees
-				</td>
+			<td>
+				<button onclick="location.href='view_categories.html'" type="button"> View</button>
+			</td>
+		</tr>
 
-				<td>
-					Employees description x select list
-					<br>
-					[all employees, foh, boh, managers, corporate]
-				</td>
+		<tr>
+			<td>
+				Employees
+			</td>
 
-				<td>
-					<button onclick="location.href='view_categories.html'" type="button"> View</button>
+			<td>
+				Employees description x select list
+				<br>
+				[all employees, foh, boh, managers, corporate]
+			</td>
 
-				</td>
-			</tr>
+			<td>
+				<button onclick="location.href='view_categories.html'" type="button"> View</button>
+
+			</td>
+		</tr>
 
 
-			<tr>
-				<td>
-					<a href="test.html">Test </a>
-				</td>
+		<tr>
+			<td>
+				<a href="test.html">Test </a>
+			</td>
 
-				<td>
-					Test description x select list
-					<br>
-					[take the test, view statistics, view all questions]
-				</td>
+			<td>
+				Test description x select list
+				<br>
+				[take the test, view statistics, view all questions]
+			</td>
 
-				<td>
-					<button onclick="location.href='questions.html'" type="button"> Edit Test</button>	</td>
-			</tr>
+			<td>
+				<button onclick="location.href='questions.html'" type="button"> Edit Test</button>	</td>
+		</tr>
 
-		</table>
-	</form>
+	</table>
+
+	<footer>
+		<a href="tanc.html">Terms of Use</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+	</footer>
 	<script type="text/javascript" src="scripts/logged_in.js"></script>
 </body>
 </html>

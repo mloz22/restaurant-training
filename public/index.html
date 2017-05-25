@@ -15,7 +15,9 @@
 	<h1 id="homepage" >
 		Homepage
 	</h1>
-
+		<a href="public_faq.html">FAQ</a>
+		<a href="about.html">About</a>
+		<a href="contact.html">Contact</a>
 
 	<div class="container">
 		<div id= "error">
@@ -24,52 +26,40 @@
 			Email:
 			<input id="txtEmail" type = "email" placeholder="Email"></input>
 		</label>
-
+		<br>
 		<label>
 			Password:
 			<input id="txtPassword" type="password" placeholder="Password"></input>
 		</label>
-<!--
-		<label>
-			Email
-
-		</label>
-		<input id="txtEmail" type = "email" placeholder="Email"></input>
 		<br>
-		<label id="verifyEmail" class="hide">
-			Verify Email
-
-		</label>
-		<input id="verifyEmail" type = "email" placeholder="Verify Email" class = "hide"></input>
-		<br id="verifyEmail" class="hide">
-		<label>
-			Pssw
-		</label>
-
-		<input id="txtPassword" type="password" placeholder="Password"></input>
-		<br>
-
-		<label id="verifyPassword" class="hide">
-			Verify Password
-		</label>
-
-		<input id="verifyPassword" type="password" placeholder="Verify Password" class = "hide"></input>
-		<br  id="verifyPassword" class="hide">
--->
-		<button id="btnLogin" class="btn btn-action">
+		<button id="btnLogin" class="btn btn-action btn-danger">
 			Login
 		</button>
-
-		<button id="btnSignUp" class = "btn btn-secondary">
+		<br>
+		<br>
+		<br>
+		<p>
+			<strong>Don't have an account?</strong>
+		</p>
+		<button id="btnSignUp" class = "btn btn-secondary btn-primary">
 			Sign Up
 		</button>
+		<br>
+		<br>
+		<br>
+		<br>
+		<p>
+			<strong>or:</strong>
+		</p>
+		<br>
+		<button id="btnAnon" class = "btn btn-action" onclick="location.href='anon/anon_db_mgmt.html'">Test it anonymously</button>
 
-
-
-
-		<!--<button id="btnAnon" class = "btn btn-action hide">Test it anonymously</button>
-		-->
 	</div>
+	<footer>
+		<a href="tanc.html">Terms of Use</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+	</footer>
 	<script src="scripts/init.js"></script>
 </body>
 </html>
