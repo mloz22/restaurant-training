@@ -30,7 +30,10 @@
 		firebase.auth().signOut();
 		window.location = 'index.html';
 	});
-
+	btnBack.addEventListener('click', e => {
+		console.log('back button event listener');
+		window.history.back();
+	});
 	//Add a realtime listener
 	firebase.auth().onAuthStateChanged(function(user){
 		console.log("firebase state change listener")
@@ -57,7 +60,7 @@
 		dbRefList.on('value', snap => console.log("line 41 " + snap.val()));
 		console.log("line 42" );
 		}
-		else if(btnLogout.addEventListener) {
+		else if(btnLogout.addEventListener.hasOwnProperty('onClick')) {
 			console.log("inside firebase state changed elseif  statement")
 			console.log("btnLogout clicked");
 			firebase.auth().signOut();

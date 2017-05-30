@@ -55,10 +55,10 @@ var answer = {
             dbRefList.on('value', snap => console.log("line 41 " + snap.val()));
             console.log("line 42" );
         }
-        else if(btnLogout.addEventListener) {
+        else if(btnLogout.addEventListener.hasOwnProperty('onClick')) {
             console.log("btnLogout clicked");
             firebase.auth().signOut();
-            window.location='index.html';
+            //window.location='index.html';
         }
         else{
             //window.location='404.html';

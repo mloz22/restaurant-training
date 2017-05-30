@@ -2,6 +2,27 @@
 <html>
 <head>
 	<style>
+		.other{
+			background-color:#444444;
+			color: #FFFFFF;
+			display: inline-block;
+			border: 2px solid #3a3a3a;
+			width:30%;
+			float:left;
+			position: relative;
+			height: 120px;
+		}
+		.white{
+			background-color: white;
+			color: #808080;
+			display: inline-block;
+			border: 1px solid grey;
+			width:	68%;
+			float: left;
+			height: 120px;
+			position: relative;
+			margin-left: 2%;
+		}
 	</style>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,28 +35,45 @@
 </head>
 <body>
 	<h1>
-		Big Category (food, drink, employees, etc)
+		View Categories by Big Category (food, drink, employees, etc)
 	</h1>
-
-	<a href="account.html">Account</a>
-	<a href="faq.html">FAQ</a>
-	<a href="database_management.html">Database</a>
-	<a href="test.html">Test</a>
-	<a href="status.html">Status</a>
-	<button id="btnLogout" class= "btn btn-warning">
-		Logout
-	</button>
-	<h2 id="txtUserName">
+	
+	    <div id = "txtLoggedIn">
+        <a id="txtAccount" href= "account.html">Account</a>
+        <a id="txtDatabase" href= "database_management.html">Database</a>
+        <a id="txtTest" href= "test.html">Test</a>
+        <a id="txtStatus" href= "status.html">Status</a>
+		<a href="about.html">About</a>
+		<a href="contact.html">Contact</a>
+		<a href="faq.html">FAQ</a>
+		<a id="btnLogout" class="btn btn-warning">Logout</a>
+	</div>
+    <h2 id="txtUserName">
 
     </h2>
-	<h2>
-		Sub Category/(ies) (type of foods, drinks, employees, etc)
-	</h2>
+	<a id="btnLogin" class="btn btn-danger hide" href="index.html">
+        Login
+    </a>
+    <a id="btnSignUp" class="btn btn-primary hide" href="signup.html">
+        Sign Up
+    </a>
+    <a id="btnBack" class="btn btn-default">Back
+    </a>
+    <a id="btnHome" class="btn btn-primary">Home
+    </a>
 
-	Other Category/(ies)
-	<br>
-	descriptions?
-	<br>
+    <section>
+        <br>
+        <div class="container">
+            <div id="txtSubcategory" class="subtitle contentBoxes">
+                <h2>Sub Category/(ies) (type of foods, drinks, employees, etc)</h2>
+            </div>
+
+            <pre class="contentBoxes cat"><div class="other"><h4><br>Other Category/(ies)</h4></div><div class="white"><h4><br>Descriptions?</h4></div></pre>
+
+        </div>
+    </section>
+
 
 	<footer>
 		<a href="terms.html">Terms of Use</a>
@@ -43,6 +81,7 @@
         <a href="privacy.html">Privacy</a>
     </footer>
 <script type="text/javascript" src="scripts/logged_in.js"></script>
+<script type="text/javascript" src="scripts/public.js"></script>
 
 </body>
 </html>

@@ -1,7 +1,5 @@
 (function(){
 
-
-
   //console.log(firebase.auth().currentUser.displayName);
 
     const userName = document.getElementById('txtUserName');
@@ -35,7 +33,7 @@
 
         if($(btnChangePicture).hasClass("disabled")){
             console.log("change picture disabled");
-            imgError.innerHTML = "Disabledasdf";
+            imgError.innerHTML = "Disabled";
         }
         else{
         console.log('clicked btnChangeSN');
@@ -139,17 +137,17 @@ function imageIsLoaded(e) {
         if (user){
             user.updateProfile({
                 displayName: sn,
-                photoURL: pic
+                //photoURL: pic
             }).then(function(){
                 console.log(JSON.stringify(firebase.auth().currentUser.displayName))
-                console.log(firebase.auth().currentUser.user_photo);
+                //console.log(firebase.auth().currentUser.user_photo);
             },function(error){
                 console.log(error);
             });
             txtUserName.innerHTML = "<em>Logged in as: </em><strong>" + firebase.auth().currentUser.displayName + "</strong>";
             txtNewUserName.innerHTML = firebase.auth().currentUser.displayName;
         }
-        else if(btnLogout.addEventListener) {
+        else if(btnLogout.addEventListener.hasOwnProperty('onClick')) {
             console.log("btnLogout clicked");
             firebase.auth().signOut();
             window.location='index.html';
