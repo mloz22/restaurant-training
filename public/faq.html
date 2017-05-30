@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-	</style>
-
+	<title>Quizinaire</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,26 +15,31 @@
 	<h1 id = "faq">
 		FAQ
     </h1>
-        <a href="faq.html">FAQ</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+	<div id = "txtLoggedIn">
+		<a id="txtDatabase" class="hide">Database</a>
+		<a id="txtTest"  class="hide">Test</a>
+		<a id="txtStatus" class="hide">Status</a>
+		<a href="about.html">About</a>
+		<a href="contact.html">Contact</a>
+		<a href="faq.html">FAQ</a>
+		<a id="btnLogout" class="btn btn-warning">Logout</a>
+	</div>
     <h2 id="txtUserName">
 
     </h2>
-    <br>
-	<button id="btnLogin" class = "btn btn-danger" onclick="location.href='index.html'">
-		Login
-	</button>
-	<button id="btnSignUp" class= "btn btn-action" onclick="location.href='signup.html'">
-		Sign Up
-	</button>
-	<button id="btnAccount" class = "btn hide">Back
-	</button>
-	<button id="btnHome" class = "btn btn-primary hide">Home
-	</button>
+	<a id="btnLogin" class="btn btn-danger" href="index.html">
+        Login
+    </a>
+    <a id="btnSignUp" class="btn btn-action" href="signup.html">
+        Sign Up
+    </a>
+    <a id="btnBack" class="btn btn-default hide">Back
+    </a>
+    <a id="btnHome" class="btn btn-primary hide">Home
+    </a>
 	<section>
-	<h2>Questions</h2>
-	<h3>Answers</h3>
+	<h2>When will this site be done?</h2>
+	<h3>Only time will tell.</h3>
 	</section>
 	<footer>
 		<a href="terms.html">Terms of Use</a>

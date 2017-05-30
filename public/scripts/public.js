@@ -16,46 +16,63 @@
 	var txtUserName = document.getElementById('txtUserName');
 	var btnLogin = document.getElementById('btnLogin');
 	var btnSignUp = document.getElementById('btnSignUp');
-	var btnAccount = document.getElementById('btnAccount');
+	var btnBack = document.getElementById('btnBack');
 	var btnHome = document.getElementById('btnHome');
+	var txtDatabase = document.getElementById('txtDatabase');
+	var txtTest = document.getElementById('txtTest');
+	var txtStatus = document.getElementById('txtStatus');
+	var btnLogout = document.getElementById('btnLogout');
 
 	console.log('public.js load success');
-	
+
 	//TODO: to be scrapped once i organize the flow better
 	btnLogin.classList.add("hide");
 	btnSignUp.classList.add("hide");
-	
+
 	//button event listeners
-	btnAccount.addEventListener('click', e => {
+	btnBack.addEventListener('click', e => {
 		console.log('back button event listener');
 		window.history.back();
 	});
-	
+
 	btnHome.addEventListener('click', e => {
 		console.log('home button event listener');
 		window.location = 'database_management.html';
 	});
-	
+	btnLogout.addEventListener('click', e => {
+		console.log('logout button event listener');
+		firebase.auth().signOut();
+		window.location = 'index.html';
+	});
+
 	//authentication functions
 	function toggle (hide){
 		console.log("inside toggle function");
+		txtDatabase.classList.remove(hide);
+		txtTest.classList.remove(hide);
+		txtStatus.classList.remove(hide);
 		btnLogin.classList.add(hide);
 		btnSignUp.classList.add(hide);
-		btnAccount.classList.remove(hide);
+		btnBack.classList.remove(hide);
 		btnHome.classList.remove(hide);
-		btnHome.classList.add("btn-primary");
+		btnLogout.classList.remove(hide);
+
 	}
 
 	function unauthenticated (){
 		console.log("public browsing function")
 		txtUserName.innerHTML = "<br>";
+		txtDatabase.classList.add("hide");
+		txtTest.classList.add("hide");
+		txtStatus.classList.add("hide");
 		btnLogin.classList.remove("hide");
 		btnSignUp.classList.remove("hide");
-		btnAccount.classList.add("hide");
+		btnLogout.classList.add("hide");
+		btnBack.classList.add("hide");
 		btnHome.classList.add("hide");
 	}
-	
-	
+
+
 	//Realtime listener
 	firebase.auth().onAuthStateChanged(function(user){
 		console.log("firebase state change listener")
@@ -63,7 +80,7 @@
 		var user = firebase.auth().currentUser;
 
 		if (user){
-			console.log("inside firebase state changed if statement")	
+			console.log("inside firebase state changed if statement")
 			toggle("hide");
 			txtUserName.innerHTML = "<em>Logged in as: </em><strong>" + firebase.auth().currentUser.displayName + "</strong>";
 
@@ -74,6 +91,6 @@
 		}
 	});
 
-	
+
 //end of public.js
 }());

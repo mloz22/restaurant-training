@@ -10,17 +10,18 @@
 		messagingSenderId: "796254468976"
 	};
 	firebase.initializeApp(config);
-	
+
 	console.log('logged_in.js load success');
-	
+
 	//TODO: re-organize initialize database
 	const dbRefUsers = firebase.database().ref().child("users");
 	const dbRefList = dbRefUsers.child('user_name');
-	
+
 	//Entry fields for Homepage
-	var txtUserName = document.getElementById('txtUserName');
+	const txtUserName = document.getElementById('txtUserName');
 	const btnLogout = document.getElementById('btnLogout');
-	
+	const txtLoggedIn = document.getElementById('txtLoggedIn');
+
 	//TODO: fix const btnAnon = document.getElementById('btnAnon');
 
 	//button event listener(s)
@@ -37,7 +38,7 @@
 		var user = firebase.auth().currentUser;
 
 		if (user){
-			console.log("inside firebase state changed if statement")				
+			console.log("inside firebase state changed if statement")
 			user.updateProfile({
 				displayName: sn,
 			}).then(function(){
