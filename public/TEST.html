@@ -12,7 +12,26 @@
 
 </head>
 <body >
-
+	<div id = "txtLoggedIn">
+        <a id="txtAccount" href= "account.html" class="hide">Account</a>
+        <a id="txtDatabase" href= "database_management.html" class="hide">Database</a>
+        <a id="txtTest" href= "test.html" class="hide">Test</a>
+        <a id="txtStatus" href= "status.html" class="hide">Status</a>
+		<a href="about.html">About</a>
+		<a href="contact.html">Contact</a>
+		<a href="faq.html">FAQ</a>
+		<a id="btnLogout" class="btn btn-warning">Logout</a>
+	</div>
+	<a id="btnLogin" class="btn btn-danger" href="index.html">
+		Login
+	</a>
+	<a id="btnSignUp" class="btn btn-action" href="signup.html">
+		Sign Up
+	</a>
+	<a id="btnBack" class="btn btn-default hide">Back
+	</a>
+	<a id="btnHome" class="btn btn-primary hide">Home
+	</a>
 	<div id="display">
 		<div id="top">
 			<div class="profile">
@@ -84,12 +103,11 @@
 
 			<div class="controls">
 
-				<img src="images/controls_snip.png" height="50px" width="180px"/>
+				<img src="images/controls_snip.png" height="50px" width="100px" class="hidden"/>
 
-				<button id="btnLogout">Play/Pause</button>
-				<button>skip</button>
-
-				<button>Quit</button>
+				<button id="play-pause" class="btn disabled">Play/Pause</button>
+				<button id="skip" class="btn disabled">skip</button>
+				<button id="quit" class="btn disabled">Quit</button>
 
 				<h2>
 					Controls
@@ -131,11 +149,16 @@
 				<h2>
 					Submit Answer
 				</h2>
-				<button>Submit</button>
+				<button id="submit" class="btn disabled">Submit</button>
 			</div>
 		</div>
 	</div>
-
+	<footer>
+		<a href="terms.html">Terms of Use</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+    </footer>
+		<script type="text/javascript" src="scripts/public.js"></script>
 	<script type="text/javascript" src="scripts/test.js"></script>
 
 </body>

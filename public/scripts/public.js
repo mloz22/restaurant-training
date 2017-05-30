@@ -18,6 +18,7 @@
 	var btnSignUp = document.getElementById('btnSignUp');
 	var btnBack = document.getElementById('btnBack');
 	var btnHome = document.getElementById('btnHome');
+	var txtAccount = document.getElementById('txtAccount');
 	var txtDatabase = document.getElementById('txtDatabase');
 	var txtTest = document.getElementById('txtTest');
 	var txtStatus = document.getElementById('txtStatus');
@@ -48,6 +49,7 @@
 	//authentication functions
 	function toggle (hide){
 		console.log("inside toggle function");
+		txtAccount.classList.remove(hide);
 		txtDatabase.classList.remove(hide);
 		txtTest.classList.remove(hide);
 		txtStatus.classList.remove(hide);
@@ -62,6 +64,7 @@
 	function unauthenticated (){
 		console.log("public browsing function")
 		txtUserName.innerHTML = "<br>";
+		txtAccount.classList.add("hide");
 		txtDatabase.classList.add("hide");
 		txtTest.classList.add("hide");
 		txtStatus.classList.add("hide");

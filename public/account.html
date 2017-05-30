@@ -35,28 +35,47 @@
 		Account
 	</h1>
 
-    <a href="account.html">Account</a>
-    <a href="faq.html">FAQ</a>
-    <a href="database_management.html">Database</a>
-    <a href="test.html">Test</a>
-    <a href="status.html">Status</a>
-	<button id="btnLogout" class= "btn btn-action">
-		Logout
-	</button>
+	<div id = "txtLoggedIn">
+        <a id="txtAccount" href= "account.html" class="hide">Account</a>
+		<a id="txtDatabase" href= "database_management.html" class="hide">Database</a>
+		<a id="txtTest" href= "test.html" class="hide">Test</a>
+		<a id="txtStatus" href= "status.html" class="hide">Status</a>
+		<a href="about.html">About</a>
+		<a href="contact.html">Contact</a>
+		<a href="faq.html">FAQ</a>
+		<a id="btnLogout" class="btn btn-warning">Logout</a>
+	</div>
+    <h2 id="txtUserName">
 
-	<h2 id="txtUserName">
-
-	</h2>
+    </h2>
+	<a id="btnLogin" class="btn btn-danger" href="index.html">
+        Login
+    </a>
+    <a id="btnSignUp" class="btn btn-primary" href="signup.html">
+        Sign Up
+    </a>
+    <a id="btnBack" class="btn btn-default hide">Back
+    </a>
+    <a id="btnHome" class="btn btn-primary hide">Home
+    </a>
 
 
 	<h2>
 		Profile Pic
 	</h2>
-	<img src="images/profile.png" height="100px" weight="100px" />
+	<img id="imgUserPhoto" height="100px" width="100px" />
 	<br>
-	<button id="txtChangePicture"class="btn">
+	<button id="btnChangePicture" class="btn disabled">
 		Change Picture
 	</button>
+	<input id="selectPicture" class="hide" type="file"/>
+	<button id="btnSubmitPicture"class="btn hide" type="file">
+		Submit Picture
+	</button>
+	<button id="btnCancelPicture"class="btn hide">
+		Cancel Picture
+	</button>
+	<p id="imgError" class="error"></p>
 
 	<h2 id="txtNewUserName">
 		Name
@@ -88,7 +107,7 @@
 			Hours taken tests
 		</h3>
 
-		<h3>
+		<h3 id="txtLastLogin">
 			last login
 		</h3>
 
@@ -109,7 +128,7 @@
 
 	</h2>
 
-	<button onclick="location.href='test.html'" type="button"> Take Test</button>	</td>
+	<a href="test.html" type="button"> Take Test</a>	</td>
 	<footer>
 		<a href="terms.html">Terms of Use</a>
         <a href="contact.html">Contact</a>
@@ -117,5 +136,6 @@
     </footer>
 
 	<script type="text/javascript" src="scripts/account.js"></script>
+	<script type="text/javascript" src="scripts/public.js"></script>
 </body>
 </html>

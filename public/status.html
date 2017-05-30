@@ -14,33 +14,53 @@
     <h1>
         Test Progress and Status
     </h1>
-
-    <a href="account.html">Account</a>
-    <a href="faq.html">FAQ</a>
-    <a href="database_management.html">Database</a>
-    <a href="test.html">Test</a>
-    <a href="status.html">Status</a>
-    <button id="btnLogout" class= "btn btn-action">
-        Logout
-    </button>
-
+    <div id = "txtLoggedIn">
+        <a id="txtAccount" href= "account.html" class="hide">Account</a>
+		<a id="txtDatabase" href= "database_management.html" class="hide">Database</a>
+		<a id="txtTest" href= "test.html" class="hide">Test</a>
+		<a id="txtStatus" href= "status.html" class="hide">Status</a>
+		<a href="about.html">About</a>
+		<a href="contact.html">Contact</a>
+		<a href="faq.html">FAQ</a>
+		<a id="btnLogout" class="btn btn-warning">Logout</a>
+	</div>
     <h2 id="txtUserName">
 
     </h2>
-    <h2>
-        What is this?
-    </h2>
-        <h4 width = "250px">
-            This is where the user will be able to see a visual progression of their testing efforts.
-            It will be selectable by category and overall progress of the available items to be tested.
-        </h4>
+    <a id="btnLogin" class="btn btn-danger" href="index.html">
+        Login
+    </a>
+    <a id="btnSignUp" class="btn btn-action" href="signup.html">
+        Sign Up
+    </a>
+    <a id="btnBack" class="btn btn-default hide">Back
+    </a>
+    <a id="btnHome" class="btn btn-primary hide">Home
+    </a>
+    <section>
+        <br>
+        <div class="container">
+            <div id="contentBoxes" class="subtitle contentBoxes">
+                <h2>What is this?</h2>
+            </div>
+
+            <pre class="contentBoxes">
+                <h3 class="blockquote mb-0" >This is where the user will be able to see a visual progression of their testing efforts.
+It will be selectable by category and overall progress of the available items to be tested.
+This content is not representative of what this page will look like.
+
+                </h3>
+            </pre>
+        </div>
+    </section>
 
     <footer>
         <a href="terms.html">Terms of Use</a>
         <a href="contact.html">Contact</a>
         <a href="privacy.html">Privacy</a>
     </footer>
-    <script type="text/javascript" src="scripts/logged_in.js"></script>
+
+    <script type="text/javascript" src="scripts/public.js"></script>
 
 </body>
 </html>

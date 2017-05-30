@@ -1,15 +1,7 @@
 (function(){
 
     // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyBDUU5l_4ud5QMDABNlN5AM4x3gy7sHIco",
-        authDomain: "restaurant-training-958d4.firebaseapp.com",
-        databaseURL: "https://restaurant-training-958d4.firebaseio.com",
-        projectId: "restaurant-training-958d4",
-        storageBucket: "restaurant-training-958d4.appspot.com",
-        messagingSenderId: "796254468976"
-      };
-      firebase.initializeApp(config);
+
 
 var question_choices = ['firebase.database().ref()child("questions").child("db_t_or_f")',
                         'firebase.database().ref()child("questions").child("db_multiple_answer")',
