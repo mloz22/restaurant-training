@@ -2,89 +2,160 @@
 <html>
 <head>
     <title>Quizinaire</title>
+    <style>
+    .a-btn{
+        background-color: #dddddd;
+    }
+    .user-btn{
+        background-color: white;
+    }
+    header{
+        background-color: #f0f0f0;
+        border: 1px solid #d0d0d0;
+        float: right;
+        width: 100%;
+
+    }
+    #basicNav{
+        display: inline-block;
+        float: right;
+        position: relative;
+    }
+    #centerNav{
+        display: inline-block;
+        margin: auto;
+        position: relative;
+    }
+    #searchBox{
+        display: inline-block;
+        width: 200px;
+        position: relative;
+    }
+
+    #currentPage{
+        background-color: #ffffff;
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        height: 92vh;
+        min-height: 500px;
+        width: 100%;
+
+    }
+    footer{
+        background-color: #f0f0f0;
+        border: 1px solid #d0d0d0;
+        position:relative;
+        width: 100%;
+        height: 3vh;
+        padding-bottom: 0px;
+        bottom: 0px;
+
+
+    }
+    #leftFooter{
+        display: inline-block;
+        position: relative;
+        float: left;
+        margin-left: 10px;
+    }
+    #rightFooter{
+        display: inline-block;
+        position: relative;
+        float: right;
+        margin-right: 10px;
+    }
+
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/basic_layout.css">
+
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
     <header id="txtHeader">
-        Header
-    </header>
-    <!--Fetches whatever link was clicked from firebase database-->
-    <h1 id="txtRoute" >
-        Route
-    </h1>
+        <!--General links div-->
 
-    <!--General links div-->
-    <div id = "txtGeneralLinks">
-        <a id = "txtFaq" href="../faq.html">
-            FAQ
-        </a>
-
-        <a id = "txtAbout" href="../about.html">
-            About
-        </a>
-
-        <a id = "txtContact" href="../contact.html">
-            Contact
-        </a>
-
-    </div>
-
-    <!--Shown if Logged In-->
-    <h2 id="txtUserName">
-        User
-    </h2>
-
-    <div id="txtAnonButtons">
-        <a id="btnLogin" class = "btn btn-danger" href="../index.html">
-            Login
-        </a>
-
-        <a id="btnSignUp" class= "btn btn-primary" href="../signup.html">
-            Sign Up
-        </a>
-    </div>
-
-    <div id="txtLoggedInButtons">
-        <a id="btnBack" class = "btn btn-secondary">
-            Back
-        </a>
-
-        <a id="btnHome" class = "btn btn-danger">
+        <a id="btnHome" class = "btn btn-info">
             Home
         </a>
+        <div id="searchBox" class="btn btn-info disabled">
+            Search
+        </div>
+        <div id = "centerNav">
+            <a id="txtDatabase" href= "database_management.html" class="btn a-btn">Database</a>
+            <a id="txtTest" href= "test.html" class="btn a-btn">Test</a>
+            <a id="txtStatus" href= "status.html" class="btn a-btn">Status</a>
+            <a id = "txtFaq" href="../faq.html" class ="btn a-btn">
+                FAQ
+            </a>
+
+            <a id = "txtAbout" href="../about.html" class ="btn a-btn">
+                About
+            </a>
+
+            <a id = "txtContact" href="../contact.html" class ="btn a-btn">
+                Contact
+            </a>
+        </div>
+
+
+        <div id="basicNav">
+            <a id="btn UserAccount" class="btn user-btn">
+                User
+            </a>
+            <a id="btnLogin" class = "btn btn-danger" href="../index.html">
+                Login
+            </a>
+
+            <a id="btnSignUp" class= "btn btn-primary " href="../signup.html">
+                Sign Up
+            </a>
+
+
+            <a id="btnLogout" class = "btn btn-warning">
+                Logout
+            </a>
+        </div>
+    </header>
+    <!--Shown if Logged In-->
+
+    <div id="currentPage">
+        <h1 id="txtRoute">Routes</h1>
+        <div id="txtContent">
+
+        </div>
+
     </div>
 
-    <div id="txtContent">
-
-    </div>
 
     <footer id="txtFooter">
-        <p id="txtCopyright">
-            &copy; 2017
-        </p>
-        <a id = "txtTAnC" href="../terms.html">
-            Terms of Use
-        </a>
+        <div id="leftFooter">
+            <p id="txtCopyright">
+                &copy; 2017
+            </p>
+        </div>
+        <div id="rightFooter">
+            <a id = "txtTAnC" href="../terms.html">
+                Terms of Use
+            </a>
 
-        <a id = "txtContact" href="../contact.html">
-            Contact
-        </a>
+            <a id = "txtContact" href="../contact.html">
+                Feedback
+            </a>
 
-        <a id= "txtPrivacy" href="../privacy.html">
-            Privacy
-        </a>
+            <a id= "txtPrivacy" href="../privacy.html">
+                Privacy
+            </a>
+        </div>
     </footer>
 
     <!--This will be the base script to load after authentication is done.
         It should handle everything in between I guess
     -->
     <script type="text/javascript" src="../scripts/quizinaire.js"></script>
-
 </body>
 </html>

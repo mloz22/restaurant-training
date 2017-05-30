@@ -24,7 +24,7 @@
 	var txtStatus = document.getElementById('txtStatus');
 	var btnLogout = document.getElementById('btnLogout');
 
-	console.log('public.js load success');
+	console.log('public.js: load success');
 
 	//TODO: to be scrapped once i organize the flow better
 	btnLogin.classList.add("hide");
@@ -32,23 +32,23 @@
 
 	//button event listeners
 	btnBack.addEventListener('click', e => {
-		console.log('back button event listener');
+		console.log('public.js: back button event listener');
 		window.history.back();
 	});
 
 	btnHome.addEventListener('click', e => {
-		console.log('home button event listener');
+		console.log('public.js: home button event listener');
 		window.location = 'database_management.html';
 	});
 	btnLogout.addEventListener('click', e => {
-		console.log('logout button event listener');
+		console.log('public.js: logout button event listener');
 		firebase.auth().signOut();
 		window.location = 'index.html';
 	});
 
 	//authentication functions
 	function toggle (hide){
-		console.log("inside toggle function");
+		console.log("public.js: inside toggle function");
 		txtAccount.classList.remove(hide);
 		txtDatabase.classList.remove(hide);
 		txtTest.classList.remove(hide);
@@ -62,7 +62,7 @@
 	}
 
 	function unauthenticated (){
-		console.log("public browsing function")
+		console.log("public.js: inside unauthenticated()")
 		txtUserName.innerHTML = "<br>";
 		txtAccount.classList.add("hide");
 		txtDatabase.classList.add("hide");
@@ -78,18 +78,23 @@
 
 	//Realtime listener
 	firebase.auth().onAuthStateChanged(function(user){
-		console.log("firebase state change listener")
+		console.log("public.js:  inside *.onAuthStateChanged: ")
+
 		const sn = txtUserName.value;
 		var user = firebase.auth().currentUser;
 
 		if (user){
-			console.log("inside firebase state changed if statement")
+			console.log("public.js:  inside *.onAuthStateChanged: inside if(user)")
+			console.log('public.js: ' + firebase.auth().currentUser.displayName);
 			toggle("hide");
 			txtUserName.innerHTML = "<em>Logged in as: </em><strong>" + firebase.auth().currentUser.displayName + "</strong>";
-
+			//this is messy and txtNewUserName is only applicable to account.js... gotta fix this
+			if (document.getElementById("txtNewUserName")){
+			txtNewUserName.innerHTML = firebase.auth().currentUser.displayName;
+			}
 		}
 		else{
-			console.log("inside firebase state changed else statement")
+			console.log("public.js:  inside *.onAuthStateChanged: inside else statement")
 			unauthenticated();
 		}
 	});

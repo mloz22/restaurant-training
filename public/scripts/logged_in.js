@@ -11,7 +11,7 @@
 	};
 	firebase.initializeApp(config);
 
-	console.log('logged_in.js load success');
+	console.log('logged_in.js: load success');
 
 	//TODO: re-organize initialize database
 	const dbRefUsers = firebase.database().ref().child("users");
@@ -26,48 +26,50 @@
 
 	//button event listener(s)
 	btnLogout.addEventListener('click', e => {
-		console.log('logout button event listener');
+		console.log('logged_in.js: logout button event listener');
 		firebase.auth().signOut();
 		window.location = 'index.html';
 	});
 	btnBack.addEventListener('click', e => {
-		console.log('back button event listener');
+		console.log('logged_in.js: back button event listener');
 		window.history.back();
 	});
 	//Add a realtime listener
 	firebase.auth().onAuthStateChanged(function(user){
-		console.log("firebase state change listener")
+		console.log("logged_in.js: firebase state change listener");
+
 		const sn = txtUserName.value;
 		var user = firebase.auth().currentUser;
 
 		if (user){
-			console.log("inside firebase state changed if statement")
+			console.log('logged_in.js: ' + firebase.auth().currentUser.displayName);
+			console.log("logged_in.js: inside firebase state changed if statement")
 			user.updateProfile({
 				displayName: sn,
 			}).then(function(){
-				console.log(JSON.stringify(firebase.auth().currentUser.displayName))
+				console.log("logged_in.js: " + JSON.stringify(firebase.auth().currentUser.displayName))
 			},function(error){
 			console.log(error);
 		});
 
 		dbRefUsers.on('value', snap=> console.log("line 34 " + snap.val()));
-		console.log(firebase.auth().currentUser.email+" line 35 ");
+		console.log("logged_in.js: line56  -  " + firebase.auth().currentUser.email+" line 35 ");
 		console.log(snap=>child('user_name').val());
-		console.log(JSON.stringify(dbRefUsers.child("user_name").value)+" line 37");
-		console.log("line 38 " + JSON.stringify(dbRefUsers.on('value', snap=> console.log(snap.val()))));
+		console.log("logged_in.js: line58  -  " + JSON.stringify(dbRefUsers.child("user_name").value)+" line 37");
+		console.log("logged_in.js: line59  -  " + JSON.stringify(dbRefUsers.on('value', snap=> console.log(snap.val()))));
 		txtUserName.innerHTML = "<em>Logged in as: </em><strong>" + firebase.auth().currentUser.displayName + "</strong>";
 
 		dbRefList.on('value', snap => console.log("line 41 " + snap.val()));
-		console.log("line 42" );
+		console.log("logged_in.js: line63  -  " );
 		}
 		else if(btnLogout.addEventListener.hasOwnProperty('onClick')) {
-			console.log("inside firebase state changed elseif  statement")
-			console.log("btnLogout clicked");
+			console.log("logged_in.js: inside firebase state changed elseif  statement")
+			console.log("logged_in.js: btnLogout clicked");
 			firebase.auth().signOut();
 			window.location='index.html';
 		}
 		else{
-			console.log("inside firebase state changed else  statement")
+			console.log("logged_in.js: inside firebase state changed else  statement")
 			//window.location='404.html';
 		}
 	});
