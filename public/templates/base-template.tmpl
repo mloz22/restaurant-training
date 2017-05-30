@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quizinaire</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/basic_layout.css">
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header id="txtHeader">
+        Header
+    </header>
+    <!--Fetches whatever link was clicked from firebase database-->
+    <h1 id="txtRoute" >
+        Route
+    </h1>
+
+    <!--General links div-->
+    <div id = "txtGeneralLinks">
+        <a id = "txtFaq" href="../faq.html">
+            FAQ
+        </a>
+
+        <a id = "txtAbout" href="../about.html">
+            About
+        </a>
+
+        <a id = "txtContact" href="../contact.html">
+            Contact
+        </a>
+
+    </div>
+
+    <!--Shown if Logged In-->
+    <h2 id="txtUserName">
+        User
+    </h2>
+
+    <div id="txtAnonButtons">
+        <a id="btnLogin" class = "btn btn-danger" href="../index.html">
+            Login
+        </a>
+
+        <a id="btnSignUp" class= "btn btn-primary" href="../signup.html">
+            Sign Up
+        </a>
+    </div>
+
+    <div id="txtLoggedInButtons">
+        <a id="btnBack" class = "btn btn-secondary">
+            Back
+        </a>
+
+        <a id="btnHome" class = "btn btn-danger">
+            Home
+        </a>
+    </div>
+
+    <div id="txtContent">
+
+    </div>
+
+    <footer id="txtFooter">
+        <p id="txtCopyright">
+            &copy; 2017
+        </p>
+        <a id = "txtTAnC" href="../terms.html">
+            Terms of Use
+        </a>
+
+        <a id = "txtContact" href="../contact.html">
+            Contact
+        </a>
+
+        <a id= "txtPrivacy" href="../privacy.html">
+            Privacy
+        </a>
+    </footer>
+
+    <!--This will be the base script to load after authentication is done.
+        It should handle everything in between I guess
+    -->
+    <script type="text/javascript" src="../scripts/quizinaire.js"></script>
+
+</body>
+</html>
