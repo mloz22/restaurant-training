@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quizinaire</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/basic_layout.css">
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <h1 id="feedback" >
+        Feedback
+    </h1>
+    <div id = "txtLoggedIn">
+        <a id="txtAccount" href= "account.html" class="hide">Account</a>
+        <a id="txtDatabase" href= "database_management.html" class="hide">Database</a>
+        <a id="txtTest" href= "test.html" class="hide">Test</a>
+        <a id="txtStatus" href= "status.html" class="hide">Status</a>
+		<a href="about.html">About</a>
+		<a href="contact.html">Contact</a>
+		<a href="faq.html">FAQ</a>
+		<a id="btnLogout" class="btn btn-warning">Logout</a>
+	</div>
+    <h2 id="txtUserName">
+
+    </h2>
+	<a id="btnLogin" class="btn btn-danger" href="index.html">
+        Login
+    </a>
+    <a id="btnSignUp" class="btn btn-primary" href="signup.html">
+        Sign Up
+    </a>
+    <a id="btnBack" class="btn btn-default hide">Back
+    </a>
+    <a id="btnHome" class="btn btn-primary hide">Home
+    </a>
+
+    <section>
+        <br>
+        <div class="container">
+            <div id="contentBoxes" class="subtitle contentBoxes">
+                <h2>Rate us</h2>
+            </div>
+
+            <pre class="contentBoxes">
+                <textarea height="300px" width="500px" placeholder="Give us feedback!">
+                </textarea>
+            </pre>
+        </div>
+    </section>
+    <footer>
+        <a href="terms.html">Terms of Use</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+    </footer>
+
+	<script type="text/javascript" src="scripts/public.js"></script>
+</body>
+</html>

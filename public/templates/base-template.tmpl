@@ -2,75 +2,11 @@
 <html>
 <head>
     <title>Quizinaire</title>
-    <style>
-    .a-btn{
-        background-color: #dddddd;
-    }
-    .user-btn{
-        background-color: white;
-    }
-    header{
-        background-color: #f0f0f0;
-        border: 1px solid #d0d0d0;
-        float: right;
-        width: 100%;
-
-    }
-    #basicNav{
-        display: inline-block;
-        float: right;
-        position: relative;
-    }
-    #centerNav{
-        display: inline-block;
-        margin: auto;
-        position: relative;
-    }
-    #searchBox{
-        display: inline-block;
-        width: 200px;
-        position: relative;
-    }
-
-    #currentPage{
-        background-color: #ffffff;
-        display: inline-block;
-        position: relative;
-        text-align: center;
-        height: 92vh;
-        min-height: 500px;
-        width: 100%;
-
-    }
-    footer{
-        background-color: #f0f0f0;
-        border: 1px solid #d0d0d0;
-        position:relative;
-        width: 100%;
-        height: 3vh;
-        padding-bottom: 0px;
-        bottom: 0px;
-
-
-    }
-    #leftFooter{
-        display: inline-block;
-        position: relative;
-        float: left;
-        margin-left: 10px;
-    }
-    #rightFooter{
-        display: inline-block;
-        position: relative;
-        float: right;
-        margin-right: 10px;
-    }
-
-    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="../css/table_design.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -78,33 +14,41 @@
 <body>
     <header id="txtHeader">
         <!--General links div-->
-
-        <a id="btnHome" class = "btn btn-info">
+        <a id="btnHome" class = "btn btn-info" href="../index.html">
             Home
         </a>
-        <div id="searchBox" class="btn btn-info disabled">
-            Search
-        </div>
-        <div id = "centerNav">
-            <a id="txtDatabase" href= "database_management.html" class="btn a-btn">Database</a>
-            <a id="txtTest" href= "test.html" class="btn a-btn">Test</a>
-            <a id="txtStatus" href= "status.html" class="btn a-btn">Status</a>
-            <a id = "txtFaq" href="../faq.html" class ="btn a-btn">
-                FAQ
-            </a>
-
-            <a id = "txtAbout" href="../about.html" class ="btn a-btn">
-                About
-            </a>
-
-            <a id = "txtContact" href="../contact.html" class ="btn a-btn">
-                Contact
-            </a>
+        <div id="searchBox">
+            <input type:="text" id="searchInput" class="disabled" placeholder="Type something">
+            <button id="btnSearch" class="btn btn-info disabled" href="index.html" role="button">Search</button>
         </div>
 
+        <div id = "dropDown" class = "nav">
+            <ul  id="nav" class="nav">
+                <li >
+                    <a id="txtDatabase" href= "../database_management.html" class="a-btn">Database</a>
+                </li>
+                <li>
+                    <a id="txtTest" href= "../test.html" class="a-btn">Test</a>
+                </li>
+                <li>
+                    <a id="txtStatus" href= "../status.html" class="a-btn">Status</a>
+                </li>
+                <li>
+                    <a id = "txtFaq" href="../faq.html" class ="a-btn">FAQ</a>
+                </li>
+
+                <li>
+                    <a id = "txtAbout" href="../about.html" class ="a-btn">About</a>
+                </li>
+
+                <li>
+                    <a id = "txtContact" href="../contact.html" class ="a-btn">Contact</a>
+                </li>
+            </ul>
+        </div>
 
         <div id="basicNav">
-            <a id="btn UserAccount" class="btn user-btn">
+            <a id="btn UserAccount" class="btn user-btn disabled">
                 User
             </a>
             <a id="btnLogin" class = "btn btn-danger" href="../index.html">
@@ -116,21 +60,359 @@
             </a>
 
 
-            <a id="btnLogout" class = "btn btn-warning">
+            <a id="btnLogout" class = "btn btn-warning disabled">
                 Logout
             </a>
         </div>
-    </header>
-    <!--Shown if Logged In-->
 
+    </header>
+
+    <!--Shown if Logged In-->
     <div id="currentPage">
         <h1 id="txtRoute">Routes</h1>
-        <div id="txtContent">
+        <div id="txtContent"><button class="btn disabled">Add new TODO</button>
+            <table>
+                <tr>
+                    <th>
+                        Template TODOs
+                    </th>
 
+                    <th width="350px">
+                        Description
+                    </th>
+
+                    <th width="140px">
+                        Action
+                    </th>
+
+                </tr>
+		
+                <tr>
+                    <td>
+                        &#9776; (dropdown)
+                    </td>
+
+                    <td>
+                        The dropdown doesn't stay in the Viewport when &#9776; is float: right; in the header.
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        &#9776; (hover/styling)
+                    </td>
+
+                    <td>
+                        The &#9776; symbole doesn't maintain color when not hovering. There should be a 
+						layout for <em>hover</em>, <em>active</em>, and <em>inactive</em>.
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        &#9776; (float:right)
+                    </td>
+
+                    <td>
+                        The dropdown should be on the far right of the viewport.
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Dropdown
+                    </td>
+
+                    <td>
+                        The dropdown should cascade up and down when active/inactive.
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Table (positioning)
+                    </td>
+
+                    <td>
+                        This table isn't centering itself at all. Fickzit.
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Media Queries
+                    </td>
+
+                    <td>
+                        I haven't even STARTED adjusting the page depending on browser, viewport size, handheld devices etc.
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+                <tr>				
+                    <td>
+                        Footer/Content (position)
+                    </td>
+
+                    <td>
+                        lock the footer to the bottom of the page without overlapping content. 
+						This may require a change to the content div.
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Searchbox (input)
+                    </td>
+
+                    <td>
+                        When typing in searchbox, the <strong>color</strong> property should change.
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Searchbox (graphic)
+                    </td>
+
+                    <td>
+                        I want to use a magnifying glass for the search option
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Searchbox (flex)
+                    </td>
+
+                    <td>
+                        I want to have the input change size depending on viewport and if it's active.
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Searchbox (display)
+                    </td>
+
+                    <td>
+                        I want the search button/magnifying glass to stay glued to the right side of the search input.
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Home Button (graphic)
+                    </td>
+
+                    <td>
+                        Create a graphic for the company and put it as the home button(just a simple one)
+   
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        User Button (graphic)
+                    </td>
+
+                    <td>
+                        Create a graphic for the company and put it as the user button(just a simple one)
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        New links
+                    </td>
+
+                    <td>
+                        Create working feedback and pricing links.
+   
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Authentication Toggle
+                    </td>
+
+                    <td>
+                        Ensure the home button, and basicNav class can differentiate
+                        between whether or not a person is logged in and take the
+                        appropriate action.
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Routes 
+                    </td>
+
+                    <td>
+                        make sure the "routes" header above is connected to the proper display when
+                        rerouting to the appropriate link.
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Account Types
+                    </td>
+
+                    <td>
+                        think about how each page will display for manager, user, admin, and any other 
+						possible account types, and create their own templates.
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Edit/Remove (functionality)
+                    </td>
+
+                    <td>
+                        Create working edit/remove buttons so I don't have to manually modify the *.tmpl file for each
+						change to this list.
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Add new TODO (functionality)
+                    </td>
+
+                    <td>
+                        Create working add new todo button so I don't have to manually modify the *.tmpl file for each
+						change to this list.
+
+                    </td>
+
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        Add new TODO (positioning)
+                    </td>
+
+                    <td>
+                        Lock a new TODO on the right area of the page vertically in the middle so it's always viewable.
+                    </td>
+                    <td>					
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+            </table>		
         </div>
-
+		<br>
     </div>
-
 
     <footer id="txtFooter">
         <div id="leftFooter">
@@ -138,16 +420,16 @@
                 &copy; 2017
             </p>
         </div>
-        <div id="rightFooter">
-            <a id = "txtTAnC" href="../terms.html">
+        <div id="rightFooter" >
+            <a id = "txtTAnC" href="../terms.html" class="footer-link">
                 Terms of Use
             </a>
 
-            <a id = "txtContact" href="../contact.html">
+            <a id = "txtContact" href="../feedback.html" class="footer-link">
                 Feedback
             </a>
 
-            <a id= "txtPrivacy" href="../privacy.html">
+            <a id= "txtPrivacy" href="../privacy.html" class="footer-link">
                 Privacy
             </a>
         </div>
@@ -156,6 +438,28 @@
     <!--This will be the base script to load after authentication is done.
         It should handle everything in between I guess
     -->
+
+<script type="text/javascript">
+	$("#nav").addClass("js").before('<div id="menu">&#9776;</div>');
+            $("#nav").toggle();
+	$("#menu").click( function(){
+    $("#nav").toggle();
+        $("#nav").addClass("menu");
+        $("#nav").removeAttr("style");
+	});
+    $("#dropDown").hover( function(){
+
+        $("#nav").removeAttr("style");
+            $("#nav").toggle();
+
+	});
+	$(window).resize(function(){
+		if(window.innerWidth > 768) {
+			$("#nav").removeAttr("style");
+                $("#nav").toggle();
+		}
+	});
+</script>
     <script type="text/javascript" src="../scripts/quizinaire.js"></script>
 </body>
 </html>

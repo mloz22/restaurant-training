@@ -1,0 +1,159 @@
+
+.a-btn{
+    background-color: #666699;
+    color: white;
+}
+.user-btn{
+    background-color: white;
+}
+#nav:hover{
+    text-decoration: none;
+    position: absolute;
+
+}
+#hover{
+    color: #660066;
+    font-size: 16pt;
+    font-weight: bold;
+}
+#menu{
+    color:  #ffccff;
+    font-size: 16pt;
+    font-weight: bold;
+
+}
+#menu:hover{
+    color: #660066;
+    font-size: 16pt;
+    font-weight: bold;
+}
+ul{
+    position: absolute;
+    text-decoration: none;
+    float: right;
+}
+li a {
+		display: block;
+        position:absolute;
+        z-index: 500;
+		width:100%;
+		background:#dddddd;
+		text-decoration: none;
+        right: 0px;
+        left: auto;
+	}
+/**/
+
+
+li:last-child {
+	border-right:none;
+}
+
+/**/
+header{
+    background-color: #666699;
+    float: right;
+    width: 100%;
+
+}
+#btnHome{
+    position: relative;
+    float: left;
+    display: inline-block;
+}
+#searchBox{
+    float: left;
+    display: inline-block;
+}
+#searchInput{
+    display: inline-block;
+    color: #c6c6c6;
+    font-size: 16pt;
+    vertical-align: middle;
+    margin-left: 20px;
+    float: left;
+    margin-right: 0;
+    border: 0;
+    padding-right: 10px;
+    text-align:right;
+    font-style: italic;
+}
+#btnSearch{
+    display: inline-block;
+    margin-left: 0px;
+    float: left;
+    margin-right: 5px;
+    font-weight: bold;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 16pt;
+}
+#basicNav{
+    display: inline-block;
+    float: right;
+    position: relative;
+    text-decoration: none;
+}
+#dropDown{
+    display: inline-block;
+    position: relative;
+    float: left;
+    text-decoration: none;
+}
+#currentPage{
+    background-color: #ffffff;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    height: 92vh;
+    min-height: 500px;
+    min-width: 400px;
+    max-width: 800px;
+    margin-left: 15%;
+    margin-right: 15%;
+
+}
+#txtFooter{
+    background-color: #666699;
+    position: fixed;
+    width: 100%;
+    height: 25px;
+    padding-bottom: 0px;
+    bottom: 0px;
+
+
+}
+#leftFooter{
+    display: inline;
+    color: #3d3d5c;
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    vertical-align: middle;
+    padding: 2px;
+}
+#txtCopyright{
+    display: inline;
+    font-weight: bold;
+}
+#rightFooter{
+    display: inline;
+    vertical-align: middle;
+    position: relative;
+    float: right;
+    padding: 2px;
+    margin-right: 20px;
+}
+a.footer-link{
+    color: #f0f0f5;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+    display: inline;
+    vertical-align: middle;
+}
+a.footer-link:hover{
+    text-decoration: underline;
+}
