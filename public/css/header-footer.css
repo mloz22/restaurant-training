@@ -1,4 +1,39 @@
 
+input::-webkit-input-placeholder {
+    color: #c6c6c6;
+}
+input:focus::-webkit-input-placeholder {
+    color: #c6c6c6;
+    font-style: italic;
+
+}
+
+/* Firefox < 19 */
+input:-moz-placeholder {
+    color: #c6c6c6;
+}
+input:focus:-moz-placeholder {
+    color: #c6c6c6;
+        font-style: italic;
+}
+
+/* Firefox > 19 */
+input::-moz-placeholder {
+    color: #c6c6c6;
+}
+input:focus::-moz-placeholder {
+    color: #c6c6c6;
+        font-style: italic;
+}
+
+/* Internet Explorer 10 */
+input:-ms-input-placeholder {
+    color: #c6c6c6;
+}
+input:focus:-ms-input-placeholder {
+    color: #c6c6c6;
+        font-style: italic;
+}
 .a-btn{
     background-color: #666699;
     color: white;
@@ -7,8 +42,12 @@
     background-color: white;
 }
 #nav:hover{
-    text-decoration: none;
-    position: absolute;
+    float: right;
+    right:0;
+}
+#nav{
+    float: right;
+    right:0;
 
 }
 #hover{
@@ -60,23 +99,27 @@ header{
     position: relative;
     float: left;
     display: inline-block;
+    left: 0px;
+
 }
 #searchBox{
     float: left;
     display: inline-block;
+    position: relative;
+    left: 30px;
 }
 #searchInput{
     display: inline-block;
-    color: #c6c6c6;
     font-size: 16pt;
     vertical-align: middle;
     margin-left: 20px;
     float: left;
-    margin-right: 0;
-    border: 0;
-    padding-right: 10px;
     text-align:right;
     font-style: italic;
+}
+#searchInput:focus{
+    color:black;
+    font-style: normal;
 }
 #btnSearch{
     display: inline-block;
@@ -95,12 +138,20 @@ header{
     float: right;
     position: relative;
     text-decoration: none;
+    right: 60px;
 }
 #dropDown{
     display: inline-block;
     position: relative;
-    float: left;
+    float: right;
     text-decoration: none;
+    right: 30px;
+}
+#btnLogin:hover{
+    color: black;
+}
+#btnLogout:hover{
+    color: black;
 }
 #currentPage{
     background-color: #ffffff;

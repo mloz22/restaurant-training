@@ -14,16 +14,25 @@
 <body>
     <header id="txtHeader">
         <!--General links div-->
-        <a id="btnHome" class = "btn btn-info" href="../index.html">
-            Home
+        <a id="btnHome" class = "btn btn-primary" href="../index.html">
+            Restaurant Training Program
         </a>
         <div id="searchBox">
-            <input type:="text" id="searchInput" class="disabled" placeholder="Type something">
-            <button id="btnSearch" class="btn btn-info disabled" href="index.html" role="button">Search</button>
+            <input type:="text" id="searchInput" class="disabled" placeholder="Search...">
+
         </div>
 
         <div id = "dropDown" class = "nav">
             <ul  id="nav" class="nav">
+                <li><a id="btnLogin" class = " btn-danger" href="../index.html">
+                    Login
+                </a>
+            </li>
+            <li>
+                <a id="btnLogout" class = "btn btn-warning disabled hide">
+                    Logout
+                </a>
+            </li>
                 <li >
                     <a id="txtDatabase" href= "../database_management.html" class="a-btn">Database</a>
                 </li>
@@ -48,20 +57,13 @@
         </div>
 
         <div id="basicNav">
-            <a id="btn UserAccount" class="btn user-btn disabled">
+            <a id="btn UserAccount" class="btn user-btn disabled hide">
                 User
             </a>
-            <a id="btnLogin" class = "btn btn-danger" href="../index.html">
-                Login
-            </a>
+
 
             <a id="btnSignUp" class= "btn btn-primary " href="../signup.html">
                 Sign Up
-            </a>
-
-
-            <a id="btnLogout" class = "btn btn-warning disabled">
-                Logout
             </a>
         </div>
 
@@ -86,51 +88,18 @@
                     </th>
 
                 </tr>
-		
-                <tr>
-                    <td>
-                        &#9776; (dropdown)
-                    </td>
-
-                    <td>
-                        The dropdown doesn't stay in the Viewport when &#9776; is float: right; in the header.
-
-                    </td>
-
-                    <td>					
-						<button href="" class="btn disabled"> Edit</button>
-						<button href="" class="btn disabled"> Delete</button>
-
-                    </td>
-                </tr>
 				<tr>
                     <td>
                         &#9776; (hover/styling)
                     </td>
 
                     <td>
-                        The &#9776; symbole doesn't maintain color when not hovering. There should be a 
+                        The &#9776; symbole doesn't maintain color when not hovering. There should be a
 						layout for <em>hover</em>, <em>active</em>, and <em>inactive</em>.
 
                     </td>
 
-                    <td>					
-						<button href="" class="btn disabled"> Edit</button>
-						<button href="" class="btn disabled"> Delete</button>
-
-                    </td>
-                </tr>
-				<tr>
                     <td>
-                        &#9776; (float:right)
-                    </td>
-
-                    <td>
-                        The dropdown should be on the far right of the viewport.
-
-                    </td>
-
-                    <td>					
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -145,7 +114,7 @@
                         The dropdown should cascade up and down when active/inactive.
                     </td>
 
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -160,7 +129,7 @@
                         This table isn't centering itself at all. Fickzit.
                     </td>
 
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -175,24 +144,7 @@
                         I haven't even STARTED adjusting the page depending on browser, viewport size, handheld devices etc.
                     </td>
 
-                    <td>					
-						<button href="" class="btn disabled"> Edit</button>
-						<button href="" class="btn disabled"> Delete</button>
-
-                    </td>
-                </tr>
-                <tr>				
                     <td>
-                        Footer/Content (position)
-                    </td>
-
-                    <td>
-                        lock the footer to the bottom of the page without overlapping content. 
-						This may require a change to the content div.
-
-                    </td>
-
-                    <td>					
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -200,20 +152,22 @@
                 </tr>
                 <tr>
                     <td>
-                        Searchbox (input)
+                        Footer/Content (position)
                     </td>
 
                     <td>
-                        When typing in searchbox, the <strong>color</strong> property should change.
+                        lock the footer to the bottom of the page without overlapping content.
+						This may require a change to the content div.
 
                     </td>
 
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
                     </td>
                 </tr>
+
 				<tr>
                     <td>
                         Searchbox (graphic)
@@ -223,7 +177,7 @@
                         I want to use a magnifying glass for the search option
                     </td>
 
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -239,23 +193,7 @@
 
                     </td>
 
-                    <td>					
-						<button href="" class="btn disabled"> Edit</button>
-						<button href="" class="btn disabled"> Delete</button>
-
-                    </td>
-                </tr>
-				<tr>
                     <td>
-                        Searchbox (display)
-                    </td>
-
-                    <td>
-                        I want the search button/magnifying glass to stay glued to the right side of the search input.
-
-                    </td>
-
-                    <td>					
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -268,10 +206,10 @@
 
                     <td>
                         Create a graphic for the company and put it as the home button(just a simple one)
-   
+
                     </td>
 
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -287,7 +225,7 @@
 
                     </td>
 
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -300,10 +238,10 @@
 
                     <td>
                         Create working feedback and pricing links.
-   
+
                     </td>
 
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -321,7 +259,7 @@
 
                     </td>
 
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -329,7 +267,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Routes 
+                        Routes
                     </td>
 
                     <td>
@@ -338,7 +276,7 @@
 
                     </td>
 
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -350,12 +288,12 @@
                     </td>
 
                     <td>
-                        think about how each page will display for manager, user, admin, and any other 
+                        think about how each page will display for manager, user, admin, and any other
 						possible account types, and create their own templates.
 
                     </td>
 
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -372,7 +310,7 @@
 
                     </td>
 
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -389,7 +327,7 @@
 
                     </td>
 
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
@@ -403,13 +341,13 @@
                     <td>
                         Lock a new TODO on the right area of the page vertically in the middle so it's always viewable.
                     </td>
-                    <td>					
+                    <td>
 						<button href="" class="btn disabled"> Edit</button>
 						<button href="" class="btn disabled"> Delete</button>
 
                     </td>
                 </tr>
-            </table>		
+            </table>
         </div>
 		<br>
     </div>
