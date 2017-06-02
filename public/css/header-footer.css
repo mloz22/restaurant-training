@@ -42,6 +42,7 @@ input:focus:-ms-input-placeholder {
 #nav:hover{
     float: right;
     right:0;
+
 }
 #nav{
     float: right;
@@ -54,14 +55,14 @@ input:focus:-ms-input-placeholder {
     font-weight: bold;
 }
 #menu{
-    color:  #ffccff;
-    font-size: 16pt;
+    color:  #000000;
+    font-size: 18pt;
     font-weight: bold;
-
+    margin-top: 2px;
 }
 #menu:hover{
     color: #660066;
-    font-size: 16pt;
+    font-size: 18pt;
     font-weight: bold;
 }
 ul{
@@ -86,13 +87,27 @@ li:last-child {
 	border-right:none;
 }
 
-/**/
-header{
-    background-color: #666699;
-    float: right;
+/*
+    position: relative;
+    position: fixed;
     width: 100%;
-
+    height: 25px;
+    padding-bottom: 0px;
+    bottom: 0px;*/
+#txtHeader{
+    background-color: #666699;
+    position: relative;
+    position: fixed;
+    width: 100%;
+    padding-top: 0px;
+    top: 0px;
+    height: 37px;
+    z-index: 1;
 }
+#txtRoute{
+    text-align: center;
+}
+
 #linkHome{
     position: relative;
     float: left;
@@ -109,7 +124,7 @@ header{
     float: left;
     display: inline-block;
     position: relative;
-    left: 30px;
+
 }
 #searchInput{
     display: inline-block;
@@ -135,6 +150,24 @@ header{
     padding-top: 0px;
     padding-bottom: 0px;
     font-size: 16pt;
+}
+
+th{
+    font-size: 14pt;
+}
+#btnAddNewRow{
+    display: inline-block;
+    position: relative;
+    top:auto;
+    margin-left: 50px;
+    float: left;
+    }
+#txtViewAs{
+    font-size: 14pt;
+    color: white;
+    display: inline-block;
+    position: relative;
+    margin-left: 50px;
 }
 #basicNav{
     display: inline-block;
@@ -165,6 +198,8 @@ header{
 #btnLogout:hover{
     color: black;
 }
+body{
+ }
 #currentPage{
     background-color: #ffffff;
     display: inline-block;
@@ -173,21 +208,24 @@ header{
     height: 92vh;
     min-height: 500px;
     min-width: 400px;
-    max-width: 800px;
-    margin-left: 15%;
-    margin-right: 15%;
+    width: 100%;
+    margin-top: 37px;
+}
+#txtContent{
 
+    max-width: 800px;
+    margin: auto;
 }
 #txtFooter{
     background-color: #666699;
+    display: inline-block;
     position: fixed;
     width: 100%;
     height: 25px;
     padding-bottom: 0px;
     bottom: 0px;
-
-
 }
+
 #leftFooter{
     display: inline;
     color: #3d3d5c;

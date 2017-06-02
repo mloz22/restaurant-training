@@ -21,7 +21,13 @@
             <input type:="text" id="searchInput" class="disabled" placeholder="Search...">
 
         </div>
-
+        <button id="btnAddNewRow" class="btn" onclick="addRow()">Add new TODO</button>
+        <div id="txtViewAs" class="hide">
+            <button class="btn btn-default">View As:</button>
+            <button class="btn btn-success hide">Admin</button>
+            <button class = " btn btn-warning hide">Super Admin</button>
+            <button class = "btn btn-info hide">User</button>
+        </div>
         <div id = "dropDown" class = "nav">
             <ul  id="nav" class="nav">
                 <li><a id="btnLogin" class = " btn-danger" href="../index.html">
@@ -62,7 +68,7 @@
                 Sign Up
             </a>
 
-            <a id="userAccount" class="disabled" href="#">
+            <a id="userAccount" class="disabled" href="../account.html">
                 <img  id="userButton" src="../images/logo_user.png" >
             </a>
         </div>
@@ -72,10 +78,12 @@
     <!--Shown if Logged In-->
     <div id="currentPage">
         <h1 id="txtRoute">Routes</h1>
-        <div id="txtContent"><button class="btn disabled">Add new TODO</button>
-            <table>
+
+
+        <div id="txtContent">
+            <table id="myTable">
                 <tr>
-                    <th>
+                    <th class="tblColumnTodo" width="140px;">
                         Template TODOs
                     </th>
 
@@ -90,7 +98,7 @@
                 </tr>
 				<tr>
                     <td>
-                        &#9776; (hover/styling)
+                        <strong>&#9776;</strong><br><em> (hover/styling)</em>
                     </td>
 
                     <td>
@@ -107,7 +115,7 @@
                 </tr>
 				<tr>
                     <td>
-                        Dropdown
+                        <strong>Dropdown</strong><br><em>(functionality)</em>
                     </td>
 
                     <td>
@@ -120,24 +128,9 @@
 
                     </td>
                 </tr>
-				<tr>
-                    <td>
-                        Table (positioning)
-                    </td>
-
-                    <td>
-                        This table isn't centering itself at all. Fickzit.
-                    </td>
-
-                    <td>
-						<button href="" class="btn disabled"> Edit</button>
-						<button href="" class="btn disabled"> Delete</button>
-
-                    </td>
-                </tr>
                 <tr>
                     <td>
-                        Media Queries
+                        <strong>Media Queries</strong>
                     </td>
 
                     <td>
@@ -152,7 +145,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Footer/Content (position)
+                        <strong>Footer/Content</strong><em> (position)</em>
                     </td>
 
                     <td>
@@ -169,7 +162,7 @@
                 </tr>
 				<tr>
                     <td>
-                        Searchbox (graphic)
+                        <strong>Searchbox</strong><em> (graphic)</em>
                     </td>
 
                     <td>
@@ -184,7 +177,7 @@
                 </tr>
 				<tr>
                     <td>
-                        Searchbox (flex)
+                        <strong>Searchbox<strong> <em>(flex)</em>
                     </td>
 
                     <td>
@@ -200,44 +193,13 @@
                 </tr>
                 <tr>
                     <td>
-                        User Button (graphic)
+                        <strong>View As..</strong><br><em>(Account Types)</em>
                     </td>
 
                     <td>
-                        Create a graphic for the company and put it as the user button(just a simple one)
-
-                    </td>
-
-                    <td>
-						<button href="" class="btn disabled"> Edit</button>
-						<button href="" class="btn disabled"> Delete</button>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        New links
-                    </td>
-
-                    <td>
-                        Create working feedback and pricing links.
-
-                    </td>
-
-                    <td>
-						<button href="" class="btn disabled"> Edit</button>
-						<button href="" class="btn disabled"> Delete</button>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Account Types
-                    </td>
-
-                    <td>
-                        think about how each page will display for manager, user, admin, and any other
-						possible account types, and create their own templates.
+                        Create working dropdown menu for <strong>user</strong>,
+                         <strong>admin</strong>,
+                         and <strong>super admin</strong> account types.
 
                     </td>
 
@@ -249,30 +211,22 @@
                 </tr>
 				<tr>
                     <td>
-                        Edit/Remove (functionality)
+                        <strong>Edit/Delete</strong> <em>(functionality)</em><br>
+                        <br>
+                        <em>Note:</em> This is very important to fix because it is the base for my database manipulation.
                     </td>
 
                     <td>
-                        Create working edit/remove buttons so I don't have to manually modify the *.tmpl file for each
-						change to this list.
-
-                    </td>
-
-                    <td>
-						<button href="" class="btn disabled"> Edit</button>
-						<button href="" class="btn disabled"> Delete</button>
-
-                    </td>
-                </tr>
-				<tr>
-                    <td>
-                        Add new TODO (functionality)
-                    </td>
-
-                    <td>
-                        Create working add new todo button so I don't have to manually modify the *.tmpl file for each
-						change to this list.
-
+                        <span>
+                            1. q<strong>Edit</strong> button toggles on <strong>finished</strong> button, and <strong>change todo</strong>
+                            / <strong>change description</strong> inputs in its same row.<br>
+                            2. <strong>Finished</strong> button does not allow null entries.<br>
+                            3. <strong>Finished</strong> button prompts <em>alert window</em> to user for confirmation of changes.<br>
+                            4. If no changes are made, no alert window, and editing features are toggled off.<br>
+                            5. If changes are made and confirmed, changes are submitted and made.<br>
+                            6. <strong>Delete</strong> button prompts <em>"Are you sure you want to delete TODO:{{content}}?"</em> window.<br>
+                            7. That window submits or cancels the delete request.
+                        </span>
                     </td>
 
                     <td>
@@ -283,11 +237,27 @@
                 </tr>
 				<tr>
                     <td>
-                        Add new TODO (positioning)
+                        <strong>Add new TODO</strong><em> (functionality)</em>
                     </td>
 
                     <td>
-                        Lock a new TODO on the right area of the page vertically in the middle so it's always viewable.
+                        Almost finished, it just doesn't permanently change the page yet.<br>
+                        create an alert window with cancel/submit/entry fields?
+                    </td>
+
+                    <td>
+						<button href="" class="btn disabled"> Edit</button>
+						<button href="" class="btn disabled"> Delete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <strong>Add new TODO</strong><em> (positioning)</em>
+                    </td>
+
+                    <td>
+                        Position btnAddNewRow in the center of the toolbar.
                     </td>
                     <td>
 						<button href="" class="btn disabled"> Edit</button>
@@ -299,7 +269,34 @@
         </div>
 		<br>
     </div>
+    <script>
+        function deleteRow(){
+            document.getElementById("myTable").deleteRow(1);
+        }
+        function addRow() {
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(1);
+            var todo = row.insertCell(0);
+            var description = row.insertCell(1);
+            var mod = row.insertCell(2);
+            <!--//todo.selectAttribute("id","todoCell");-->
+            todo.innerHTML = "<button id='newTodo'class='btn' onclick='newTodo()'>New TODO</button>";
+            description.innerHTML = "<button id='newDesc' class='btn' onclick='newDesc()'>New Description</button>";
+            mod.innerHTML = '<button href="" class="btn disabled"> Edit</button><button href="" class="btn" onclick="deleteRow()"> Delete</button>';
+        }
+        function newTodo(){
+            <!--////var todo = getElementById("todoCell");-->
+            var newTodo = document.getElementById("newTodo");
+            newTodo.classList.add("hide");
+            //todo.innerHTML = "<button id='submitTodo'class='btn' onclick='todoSubmit()'>Submit TODO</button>";
+        }
+        function newDesc(){
+            var newDesc = document.getElementById("newDesc");
+            //todo.innerHTML = "<button id='submitDesc'class='btn' onclick='todoSubmit()'>Submit Description</button>";
+            newDesc.classList.add("hide");
 
+        }
+    </script>
     <footer id="txtFooter">
         <div id="leftFooter">
             <p id="txtCopyright">
@@ -307,7 +304,10 @@
             </p>
         </div>
         <div id="rightFooter" >
-            <a id = "txtTAnC" href="../terms.html" class="footer-link">
+            <a id = "txtPricing" href="../pricing.html" class="footer-link">
+                Pricing Info
+            </a>
+            <a id = "txtTerms" href="../terms.html" class="footer-link">
                 Terms of Use
             </a>
 
