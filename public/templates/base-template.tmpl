@@ -14,8 +14,8 @@
 <body>
     <header id="txtHeader">
         <!--General links div-->
-        <a id="btnHome" class = "btn btn-primary" href="../index.html">
-            Restaurant Training Program
+        <a id="linkHome" href="../index.html">
+            <img src="../images/home.png" id="imgHome">
         </a>
         <div id="searchBox">
             <input type:="text" id="searchInput" class="disabled" placeholder="Search...">
@@ -28,11 +28,7 @@
                     Login
                 </a>
             </li>
-            <li>
-                <a id="btnLogout" class = "btn btn-warning disabled hide">
-                    Logout
-                </a>
-            </li>
+
                 <li >
                     <a id="txtDatabase" href= "../database_management.html" class="a-btn">Database</a>
                 </li>
@@ -53,17 +49,21 @@
                 <li>
                     <a id = "txtContact" href="../contact.html" class ="a-btn">Contact</a>
                 </li>
+                <li>
+                    <a id="btnLogout" class = "btn btn-warning disabled hide">
+                        Logout
+                    </a>
+                </li>
             </ul>
         </div>
 
         <div id="basicNav">
-            <a id="btn UserAccount" class="btn user-btn disabled hide">
-                User
-            </a>
-
-
             <a id="btnSignUp" class= "btn btn-primary " href="../signup.html">
                 Sign Up
+            </a>
+
+            <a id="userAccount" class="disabled" href="#">
+                <img  id="userButton" src="../images/logo_user.png" >
             </a>
         </div>
 
@@ -167,7 +167,6 @@
 
                     </td>
                 </tr>
-
 				<tr>
                     <td>
                         Searchbox (graphic)
@@ -201,22 +200,6 @@
                 </tr>
                 <tr>
                     <td>
-                        Home Button (graphic)
-                    </td>
-
-                    <td>
-                        Create a graphic for the company and put it as the home button(just a simple one)
-
-                    </td>
-
-                    <td>
-						<button href="" class="btn disabled"> Edit</button>
-						<button href="" class="btn disabled"> Delete</button>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
                         User Button (graphic)
                     </td>
 
@@ -238,41 +221,6 @@
 
                     <td>
                         Create working feedback and pricing links.
-
-                    </td>
-
-                    <td>
-						<button href="" class="btn disabled"> Edit</button>
-						<button href="" class="btn disabled"> Delete</button>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Authentication Toggle
-                    </td>
-
-                    <td>
-                        Ensure the home button, and basicNav class can differentiate
-                        between whether or not a person is logged in and take the
-                        appropriate action.
-
-                    </td>
-
-                    <td>
-						<button href="" class="btn disabled"> Edit</button>
-						<button href="" class="btn disabled"> Delete</button>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Routes
-                    </td>
-
-                    <td>
-                        make sure the "routes" header above is connected to the proper display when
-                        rerouting to the appropriate link.
 
                     </td>
 

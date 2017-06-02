@@ -38,9 +38,7 @@ input:focus:-ms-input-placeholder {
     background-color: #666699;
     color: white;
 }
-.user-btn{
-    background-color: white;
-}
+
 #nav:hover{
     float: right;
     right:0;
@@ -95,12 +93,17 @@ header{
     width: 100%;
 
 }
-#btnHome{
+#linkHome{
     position: relative;
     float: left;
     display: inline-block;
     left: 0px;
-
+}
+#imgHome{
+    height: 28px;
+    width: 28px;
+    margin-top: 4px;
+    margin-left: 10px;
 }
 #searchBox{
     float: left;
@@ -148,7 +151,16 @@ header{
     right: 30px;
 }
 #btnLogin:hover{
+    background-color: #ba554c;
     color: black;
+}
+#userButton{
+    width: 25px;
+    height: 25px;
+}
+#userAccount{
+    position: relative;
+    margin-left: 20px;
 }
 #btnLogout:hover{
     color: black;
