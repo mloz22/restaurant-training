@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quizinaire</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/table_design.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header id="txtHeader">
+        <!--General links div-->
+        <a id="linkHome" href="../index.html">
+            <img src="../images/home.png" id="imgHome">
+        </a>
+        <div id="searchBox">
+            <input type:="text" id="searchInput" class="disabled" placeholder="Search...">
+
+        </div>
+        <button id="btnAddNewRow" class="btn" onclick="addRow()">Add new TODO</button>
+        <div id="txtViewAs" class="hide">
+            <button class="btn btn-default">View As:</button>
+            <button class="btn btn-success hide">Admin</button>
+            <button class = " btn btn-warning hide">Super Admin</button>
+            <button class = "btn btn-info hide">User</button>
+        </div>
+        <div id = "dropDown" class = "nav">
+            <ul  id="nav" class="nav">
+                <li><a id="btnLogin" class = " btn-danger" href="../index.html">
+                    Login
+                </a>
+            </li>
+
+                <li >
+                    <a id="txtDatabase" href= "../database_management.html" class="a-btn">Database</a>
+                </li>
+                <li>
+                    <a id="txtTest" href= "../test.html" class="a-btn">Test</a>
+                </li>
+                <li>
+                    <a id="txtStatus" href= "../status.html" class="a-btn">Status</a>
+                </li>
+                <li>
+                    <a id = "txtFaq" href="../faq.html" class ="a-btn">FAQ</a>
+                </li>
+
+                <li>
+                    <a id = "txtAbout" href="../about.html" class ="a-btn">About</a>
+                </li>
+
+                <li>
+                    <a id = "txtContact" href="../contact.html" class ="a-btn">Contact</a>
+                </li>
+                <li>
+                    <a id="btnLogout" class = "btn btn-warning disabled hide">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="basicNav">
+            <a id="btnSignUp" class= "btn btn-primary " href="../signup.html">
+                Sign Up
+            </a>
+
+            <a id="userAccount" class="disabled" href="../account.html">
+                <img  id="userButton" src="../images/logo_user.png" >
+            </a>
+        </div>
+
+    </header>
+
+    <!--Shown if Logged In-->
+    <div id="currentPage">
+        <h1 id="txtRoute">/Route (current page)</h1>
+
+
+        <div id="txtContent">
+            <table id="myTable">
+                <tr>
+                    <th class="tblColumnTodo" width="140px;">
+                        Website TODOs
+                    </th>
+
+                    <th width="350px">
+                        Description
+                    </th>
+
+                    <th width="140px">
+                        Action
+                    </th>
+
+                </tr>
+				<tr>
+                    <td>
+                        <strong>"Finish" base template</strong><br>
+                    </td>
+
+                    <td>
+                        Finish it?
+
+                    </td>
+
+                    <td>
+						1
+						<button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <strong>Create nav icons</strong><br><em>(graphics)</em>
+                    </td>
+
+                    <td>
+                        Make em cute
+                    </td>
+
+                    <td>2
+						<button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Create headings icons</strong><em>(graphics)</em>
+                    </td>
+
+                    <td>
+                        Make em cute
+                    </td>
+
+                    <td>3
+						<button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Authentication</strong><em> (firebase)</em>
+                    </td>
+
+                    <td>4
+                        lock the footer to the bottom of the page without overlapping content.
+						This may require a change to the content div.
+
+                    </td>
+
+                    <td>4
+						<button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <strong>Security</strong><em> (Firebase?<br> Something else?)</em>
+                    </td>
+
+                    <td>
+                        make sure it's safe and secure on server side and user side.
+                    </td>
+
+                    <td>5
+						<button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <strong>Security Protocols</strong> <em>(Firebase? <br> Something else?)</em>
+                    </td>
+
+                    <td>
+                        Not sure what I meant here... but okeydokey
+                    </td>
+
+                    <td>6
+						<button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Anonymous Browsing</strong><br><em>(Firebase)</em>
+                    </td>
+
+                    <td>
+                        Give people a small intro to what they'll be buying and seeing.
+                    </td>
+
+                    <td>7
+						<button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <strong>Read/Write DB</strong> <em>(Firebase)</em><br>
+                    </td>
+
+                    <td>
+                        I think this will require a nice "table" input, so I'll play around with
+                        stuff here.
+                    </td>
+
+                    <td>8
+						<button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <strong>Angular</strong><em> (study/ apply)</em>
+                    </td>
+
+                    <td>
+                        Go through w3schools, or Angular CLI, or Angular University.
+                    </td>
+
+                    <td>9
+						<button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <strong>Notifications</strong><em> (Firebase)</em>
+                    </td>
+
+                    <td>
+                        create a rolling Notifications menu and html.
+                    </td>
+                    <td>10
+						<button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Account Card</strong><em>(css / firebase)</em>
+                    </td>
+
+                    <td>
+                        Create a user id Card layout for the account.
+                    </td>
+                    <td>11
+                        <button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Time</strong><em>(firebase)</em>
+                    </td>
+
+                    <td>
+                        Keep track of total time taking tests.
+
+                    </td>
+                    <td>12
+                        <button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Last Login</strong><em>(Firebase)</em>
+                    </td>
+
+                    <td>
+                        Post last login information
+
+                    </td>
+                    <td>13
+                        <button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Menu</strong><em>(firebase/css)</em>
+                    </td>
+
+                    <td>
+                        Make a site-generated menu (as opposed to an official restaurant menu)
+                    </td>
+                    <td>14
+                        <button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>External Links</strong><em>(html/css)</em>
+                    </td>
+
+                    <td>
+                        create links to retaurant menu site
+                    </td>
+                    <td>15
+                        <button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>File Uploading</strong><em>(jquery?)</em>
+                    </td>
+                    <td>
+                        Provide viewable schedule uploading from pdf/doc/excel files
+                    </td>
+                    <td>16
+                        <button href="" class="btn disabled"> Mark Complete</button>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>External Link</strong><em>html</em>
+                    </td>
+
+                    <td>
+                        provide link to scheduling website.
+                    </td>
+                    <td>17
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Super Admin Privileges</strong><em>(firebase)</em>
+                    </td>
+                    <td>
+                        Super admin verifies new ingredient submissions to core db.
+                        Still allows for specific restaurant group to keep own modified ingredients db
+                    </td>
+                    <td>18
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Admin Privileges</strong><em>(firebase)</em>
+                    </td>
+                    <td>
+                        Admins can view entire ingredient listing
+                    </td>
+                    <td>19
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>User Privileges</strong><em>firebase</em>
+                    </td>
+                    <td>
+                        Users can view entire restaurant ingredient db
+                    </td>
+                    <td>20
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Translation</strong><em>(fuck)</em>
+                    </td>
+                    <td>
+                        English/Spanish translation
+                    </td>
+                    <td>21
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>ARIA guidelines</strong><em>(html? template program?)</em>
+                    </td>
+                    <td>
+                        make site readable and adjustable for pwd
+                    </td>
+                    <td>22
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Phone App</strong><em>(droid/iphone/windows)</em>
+                    </td>
+                    <td>
+                        Focused basically just on the test aspect of the site.
+                    </td>
+                    <td>23
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Db Efficiency</strong><em>(Firebase/ Something else?)</em>
+                    </td>
+                    <td>
+                        Structure db for quick efficient access depending on use of information
+                    </td>
+                    <td>24
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Ajax</strong><em>(firebase/ study/ apply)</em>
+                    </td>
+                    <td>
+                        Study w3schools and youtube videos for help.
+                    </td>
+                    <td>25
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Handlebars</strong><em>(handlebars)</em>
+                    </td>
+                    <td>
+                        Used for templating.
+                    </td>
+                    <td>26
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>SignUp</strong><em>(two types)</em>
+                    </td>
+                    <td>
+                        one for preregistered users, and one for corporate application.
+                    </td>
+                    <td>27
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Cookies</strong><em>(hashing?)</em>
+                    </td>
+                    <td>
+                        To keep a little more security, and quicker load times when accessing
+                        from a computer.
+                    </td>
+                    <td>28
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Keep track</strong><em>(as I accomplish...)</em>
+                    </td>
+                    <td>
+                        Not sure how to easily export that information. I have to organize this better so
+                        I can feel good about what I'm accomplishing when I'm not getting anywhere.
+                    </td>
+                    <td>29
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Clean</strong><em>(good coding practice)</em>
+                    </td>
+                    <td>
+                        Just keep cleaning up code as I hit a milestone, to review and maybe polish
+                        as I am going through. This will occur multiple times. Clean as each module is successfully
+                        created.
+                    </td>
+                    <td>30
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Business name</strong><em>(cuizine? menunem? grater?)</em>
+                    </td>
+                    <td>
+                        just make a business name, then freaking but it and a hosting site... oy.. a hosting site.
+                    </td>
+                    <td>31
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Captcha</strong><em>(captcha)</em>
+                    </td>
+                    <td>
+                        Not necessarily captcha, but something to verify a real person.
+                    </td>
+                    <td>32
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>GoogAlytics</strong><em>(gewgul)</em>
+                    </td>
+                    <td>
+                        Integrating good search algorithms will help me. Do it.
+                    </td>
+                    <td>33
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Download</strong><em>(*.exe)</em>
+                    </td>
+                    <td>
+                        downloading *.exe to work offline?
+                    </td>
+                    <td>34
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Export</strong><em>(test focus)</em>
+                    </td>
+                    <td>
+                        to give managers and corporate an idea of how servers/cooks are doing
+                        and how it's saving them monies.
+                    </td>
+                    <td>35
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Integratable</strong><em>(js?)</em>
+                    </td>
+                    <td>
+                        integratable with pos, micros, aloha, opentable.
+                    </td>
+                    <td>36
+                        <button href="" class="btn disabled"> Mark Complete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+		<br>
+    </div>
+    <a href="base-template.tmpl" class="btn btn-success" text-align="center">Basic Template</a>
+    <br> <br>
+    <script>
+        function deleteRow(){
+            document.getElementById("myTable").deleteRow(1);
+        }
+        function addRow() {
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(1);
+            var todo = row.insertCell(0);
+            var description = row.insertCell(1);
+            var mod = row.insertCell(2);
+            <!--//todo.selectAttribute("id","todoCell");-->
+            todo.innerHTML = "<button id='newTodo'class='btn' onclick='newTodo()'>New TODO</button>";
+            description.innerHTML = "<button id='newDesc' class='btn' onclick='newDesc()'>New Description</button>";
+            mod.innerHTML = '<button href="" class="btn disabled"> Edit</button><button href="" class="btn" onclick="deleteRow()"> Delete</button>';
+        }
+        function newTodo(){
+            <!--////var todo = getElementById("todoCell");-->
+            var newTodo = document.getElementById("newTodo");
+            newTodo.classList.add("hide");
+            //todo.innerHTML = "<button id='submitTodo'class='btn' onclick='todoSubmit()'>Submit TODO</button>";
+        }
+        function newDesc(){
+            var newDesc = document.getElementById("newDesc");
+            //todo.innerHTML = "<button id='submitDesc'class='btn' onclick='todoSubmit()'>Submit Description</button>";
+            newDesc.classList.add("hide");
+
+        }
+    </script>
+    <footer id="txtFooter">
+        <div id="leftFooter">
+            <p id="txtCopyright">
+                &copy; 2017
+            </p>
+        </div>
+        <div id="rightFooter" >
+            <a id = "txtPricing" href="../pricing.html" class="footer-link">
+                Pricing Info
+            </a>
+            <a id = "txtTerms" href="../terms.html" class="footer-link">
+                Terms of Use
+            </a>
+
+            <a id = "txtContact" href="../feedback.html" class="footer-link">
+                Feedback
+            </a>
+
+            <a id= "txtPrivacy" href="../privacy.html" class="footer-link">
+                Privacy
+            </a>
+        </div>
+    </footer>
+
+    <!--This will be the base script to load after authentication is done.
+        It should handle everything in between I guess
+    -->
+
+<script type="text/javascript">
+	$("#nav").addClass("js").before('<div id="menu">&#9776;</div>');
+            $("#nav").toggle();
+	$("#menu").click( function(){
+    $("#nav").toggle();
+        $("#nav").addClass("menu");
+        $("#nav").removeAttr("style");
+	});
+    $("#dropDown").hover( function(){
+
+        $("#nav").removeAttr("style");
+            $("#nav").toggle();
+
+	});
+	$(window).resize(function(){
+		if(window.innerWidth > 768) {
+			$("#nav").removeAttr("style");
+                $("#nav").toggle();
+		}
+	});
+</script>
+    <script type="text/javascript" src="../scripts/quizinaire.js"></script>
+</body>
+</html>

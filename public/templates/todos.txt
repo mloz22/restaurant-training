@@ -1,0 +1,35 @@
+1. "Finish" base template
+2. Create nav icons
+3. Create headings icons
+4. Integrate user authentication into site
+5. Test for security issues
+6. Create security protocols
+7. Create anonymous browsing
+8. Integrate read/write to database
+9. Ajax loading 
+10. Notifications.html
+11. Create user id card 
+12. Keep track of total time taking tests
+13. Keep track of last login
+14. Create readable menu from db
+15. Link to restaurants menu site
+16. Provide schedule pdf/doc /excel uploading
+17. Or.... Provide link to scheduling site
+18. Super admin verifies new ingredient submissions to core db. Still allows for specific restaurant group to keep own modified ingredients db
+19. Admins can view entire ingredient listing
+20. English/Spanish translation
+21. Create test phone App (droid/ iphone)
+22. Structure db for quick efficient access depending on use of information
+23. Start learning angular and how it correlates with my projects needs.
+24. Learn handle bars or similar app for template manipulations
+25. Create two types of sign up pages. One for corporations and one for users
+26. Generate hashed cookies
+27. Keep track of all of what I've accomplished as I finish each task.
+28. Constantly clean up code. Create console logs for each step
+29. Create business name. menunem?
+30. Integrate captcha type use.
+31. Apply Google analytics to my site
+32. Downloadable *.exe of test?
+33. Exportable test info
+34. Integrateable with pos, micros, aloha, open table
+35.
