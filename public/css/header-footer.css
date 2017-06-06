@@ -47,12 +47,16 @@ input:focus:-ms-input-placeholder {
 #nav{
     float: right;
     right:0;
-
+    border: 2px solid #330033;
 }
 #hover{
     color: #660066;
     font-size: 16pt;
     font-weight: bold;
+}
+#btnTest{
+    width: 25px;
+    height: 25px;
 }
 #menu{
     color:  #000000;
@@ -61,7 +65,15 @@ input:focus:-ms-input-placeholder {
     margin-top: 2px;
 }
 #menu:hover{
-    color: #660066;
+    color: #4d004d;
+    font-size: 18pt;
+    font-weight: bold;
+}
+#menu:active{
+    color:#990099;
+}
+#menu:focus{
+    color: #FFFFFF;
     font-size: 18pt;
     font-weight: bold;
 }
@@ -107,12 +119,15 @@ li:last-child {
 #txtRoute{
     text-align: center;
 }
-
+.icon{
+    pointer-events: none;
+}
 #linkHome{
     position: relative;
     float: left;
     display: inline-block;
     left: 0px;
+
 }
 #imgHome{
     height: 28px;
@@ -194,6 +209,9 @@ th{
 #userAccount{
     position: relative;
     margin-left: 20px;
+}
+#userAccount:active{
+    text-shadow: 0 0 3px #FF0000;
 }
 #btnLogout:hover{
     color: black;

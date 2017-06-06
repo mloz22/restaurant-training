@@ -46,7 +46,7 @@
 		<a id="btnLogout" class="btn btn-warning">Logout</a>
 	</div>
     <h2 id="txtUserName">
-
+		UserName
     </h2>
 	<a id="btnLogin" class="btn btn-danger" href="index.html">
         Login
@@ -76,28 +76,52 @@
 		Cancel Picture
 	</button>
 	<p id="imgError" class="error"></p>
-
 	<h2 id="txtNewUserName">
 		Name
 	</h2>
 
-	<input id="txtChangeSN" type="text" placeholder="Enter new Screen Name here" class = "hide"></input>
-	<button id="btnChangeSN" class="btn">
-		Change Name
-	</button>
-	<button id="btnSubmitSN" class="btn hide">
-		Submit
-	</button>
-	<button id="btnCancelSN" class="btn hide">
-		Cancel
-	</button>
+		<input id="txtChangeSN" type="text" placeholder="Enter new Screen Name here" class = "hide"></input>
+		<button id="btnChangeSN" class="btn">
+			Change Name
+		</button>
+		<button id="btnSubmitSN" class="btn hide">
+			Submit
+		</button>
+		<button id="btnCancelSN" class="btn hide">
+			Cancel
+		</button>
 	<h2>
 		Job Title(s)
 	</h2>
+		<button id="btnRequest" class="btn disabled">
+			Request Change
+		</button>
+		<select class="hide">
+			<option>Manager</option>
+			<option>Server</option>
+			<option>Host</option>
+			<option>Bar</option>
+			<option>Kitchen</option>
+		</select>
+		<button id="btnCancelRequest" class="btn hide">
+			Cancel Request
+		</button>
+	<p id="imgError" class="error"></p>
 
 	<h2>
 		Employee Number
 	</h2>
+		<button id="btnRequest" class="btn disabled">
+			Request Change
+		</button>
+		<select class="hide">
+			<option>Out of Date</option>
+			<option>Incorrect</option>
+			<input type="text" class="hide" placeholder="Employee Number"></input>
+		<button id="btnCancelRequest" class="btn hide">
+			Cancel Request
+		</button>
+	<p id="imgError" class="error"></p>
 
 	<h2>
 		Current Status
@@ -127,8 +151,8 @@
 	<h2>
 
 	</h2>
-
-	<a href="test.html" type="button"> Take Test</a>	</td>
+	<a href="images/profile-layout.jpg">Preview The Layout</a><br>or<br>
+	<a id="btnBack" href="test.html" class="btn btn-default">Take Test</a>
 	<footer>
 		<a href="templates/base-template.tmpl" class="btn btn-success">Basic Template</a>
 		<a href="templates/website-todos.tmpl" class="btn btn-info">Upcoming Changes</a>
