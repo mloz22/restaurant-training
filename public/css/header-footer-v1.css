@@ -1,0 +1,335 @@
+/*
+ideas about cleaning up css:
+https://webdesign.tutsplus.com/articles/outside-in-ordering-css-properties-by-importance--cms-21685
+
+CSS is ordered as it appears on the page:
+TOP - BOTTOM / LEFT - RIGHT
+    1. Starting with the @mediaQueries
+        a. Desktop / Notebook
+            1. Firefox
+            2. Chrome
+            3. IE
+            4. Safari
+            5. Opera
+        b. Android Phones
+        c. Android Tablets
+        d. iPhones
+        e. iPads
+        f. Windows Phones
+        g. Windows Tablets
+
+    3. Then the body.
+        ??
+    3. Then the header.
+        a. Home Button
+        b. Search Box
+        c. Test Button
+        d. User Button
+        e. Drop Down
+    4. then the content.
+        a. Miscellaneous
+        b. Title
+        c. Content
+    5. then the footer.
+        a. Copyright
+        b. Info Links
+*/
+
+/* Media Queries */
+
+    input::-webkit-input-placeholder {
+        color: #c6c6c6;
+    }
+    input:focus::-webkit-input-placeholder {
+        color: #c6c6c6;
+        font-style: italic;
+
+    }
+    /* Firefox < 19 */
+    input:-moz-placeholder {
+        color: #c6c6c6;
+    }
+    input:focus:-moz-placeholder {
+        color: #c6c6c6;
+            font-style: italic;
+    }
+    /* Firefox > 19 */
+    input::-moz-placeholder {
+        color: #c6c6c6;
+    }
+    input:focus::-moz-placeholder {
+        color: #c6c6c6;
+            font-style: italic;
+    }
+    /* Internet Explorer 10 */
+    input:-ms-input-placeholder {
+        color: #c6c6c6;
+    }
+    input:focus:-ms-input-placeholder {
+        color: #c6c6c6;
+            font-style: italic;
+    }
+    .a-btn{
+        background-color: #666699;
+        color: white;
+        bodre: 1px solid black;
+
+    }
+/*Body*/
+    body{
+    }
+    ul{
+        position: absolute;
+        text-decoration: none;
+        float: right;
+    }
+    li a {
+    		display: block;
+            position:absolute;
+            z-index: 500;
+    		width:100%;
+    		background:#dddddd;
+    		text-decoration: none;
+            right: 0px;
+            left: auto;
+    	}
+    li:last-child {
+    	border-right:none;
+    }
+    th{
+        font-size: 14pt;
+    }
+
+
+/*  Header  */
+    #txtHeader{
+        display: inline-block;
+        position: fixed;
+        background-color: #666699;
+        padding-top: 0px;
+        width: 100%;
+        top: 0px;
+        height: 37px;
+        min-width: 500px;
+    }
+    /*may delete this one -->*/.icon{
+
+        pointer-events: none;
+
+    }
+    #linkHome{
+        position: relative;
+        float: left;
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+        top: 5px;
+    }
+    #imgHome{
+        height: 24px;
+    }
+    #userTest{
+        display: inline-block;
+        position: relative;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+
+    }
+    #imgUserButton{
+        display: inline-block;
+        position: relative;
+        height: 25px;
+    }
+    #userNotifications{
+        display:inline-block;
+        position: relative;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+    #userAccount{
+        display:inline-block;
+        position: relative;
+        padding: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+
+    }
+    #userAccount:active{
+        text-shadow: 0 0 3px #FF0000;
+    }
+    #basicNav{
+        display: inline-block;
+        float: right;
+        position: relative;
+        text-decoration: none;
+        padding-right: 27px;
+        top: 6px;
+    }
+        /*  Header: Search box*/
+        #searchBox{
+            display: inline-block;
+            position: relative;
+            float: right;
+            margin-right: 20px;
+        }
+        #searchInput{
+            display: inline-block;
+            font-size: 16pt;
+            vertical-align: middle;
+            text-align:right;
+            font-style: italic;
+
+        }
+        #searchInput:focus{
+            color:black;
+            font-style: normal;
+        }
+        #btnSearch{
+            display: inline-block;
+            position: relative;
+            float: right;
+            font-weight: bold;
+            height: 36px;
+            vertical-align: middle;
+            font-size: 16pt;
+        }
+
+        /* Drop Down CSS    */
+        #dropDown{
+            display: block;
+            position: relative;
+            float: right;
+            text-decoration: none;
+
+        }
+        #btnLogin:hover{
+            background-color: #ba554c;
+            color: black;
+        }
+        #menu{
+            display: inline-block;
+            position: relative;
+            float: right;
+            color:  #000000;
+            font-weight: bold;
+            font-size: 22pt;
+            margin-top: -1px;
+            right: 15px;
+        }
+        #menu:hover{
+            color: #4d004d;
+        }
+        #menu:active{
+            color:#990099;
+        }
+        #menu:focus{
+            color: #FFFFFF;
+        }
+        #btnLogout:hover{
+        color: black;
+        }
+
+        #nav{
+            float: right;
+            top:37px;
+            right:5px;
+        }
+        #hover{
+            color: #660066;
+            font-size: 16pt;
+            font-weight: bold;
+        }
+
+/*  Content */
+    /*  Miscellaneous   */
+    #txtViewAs{
+        font-size: 14pt;
+        color: white;
+        display: inline-block;
+        position: relative;
+        margin-left: 50px;
+    }
+    #btnAddNewRow{
+
+        display: block;
+        position: fixed;
+        top:37px;
+        margin-left: 50%;
+        z-index: 3;
+        background-color: purple;
+        color: white;
+        font-weight: bold;
+
+    }
+
+    #txtRoute{
+        text-align: center;
+    }
+    #currentPage{
+        background-color: #ffffff;
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        height: 92vh;
+        min-height: 500px;
+        min-width: 500px;
+        width: 100%;
+        margin-top: 37px;
+    }
+    #txtContent{
+
+        max-width: 800px;
+        margin: auto;
+    }
+/*  Footer  */
+    a.footer-link{
+        color: #f0f0f5;
+        text-decoration: none;
+        font-weight: bold;
+        margin-left: 10px;
+        display: inline;
+        vertical-align: middle;
+    }
+    a.footer-link:hover{
+        text-decoration: underline;
+    }
+    #txtFooter{
+        background-color: #666699;
+        display: inline-block;
+        position: fixed;
+        width: 100%;
+        height: 25px;
+        padding-bottom: 0px;
+        bottom: 0px;
+    }
+
+    #leftFooter{
+        display: inline;
+        color: #3d3d5c;
+        position: relative;
+        float: left;
+        margin-left: 20px;
+        vertical-align: middle;
+        padding: 2px;
+    }
+    #txtCopyright{
+        display: inline;
+        font-weight: bold;
+    }
+
+    #rightFooter{
+        display: inline;
+        vertical-align: middle;
+        position: relative;
+        float: right;
+        padding: 2px;
+        margin-right: 20px;
+    }
