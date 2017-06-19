@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Quizinaire</title>
+    <title>Do-Over</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/table_design.css">
-    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/header-footer-do-over.css">
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -15,89 +15,62 @@
 <body>
     <header id="txtHeader">
         <!--General links div-->
-        <a id="linkHome" href="../index.html">
-            <img id="imgHome" src="../images/home.png">
-        </a>
-        <a id="btnSignUp" class= "btn btn-primary hide" href="../signup.html">
-            Sign Up
-        </a>
-        <div id="txtViewAs" class="hide">
-            <button class="btn btn-default hide">View As:</button>
-            <button class="btn btn-success hide">Admin</button>
-            <button class = " btn btn-warning hide">Super Admin</button>
-            <button class = "btn btn-info hide">User</button>
-        </div>
-        <div id = "dropDown" class="">
-            <ul  id="nav" class="nav">
-                <li>
-                    <a id="btnLogin" class = "btn-danger nav" href="../index.html">
-                        Login
-                    </a>
-                </li>
-                <li >
-                    <a id="txtDatabase" href= "../database_management.html" class="a-btn nav">Database</a>
-                </li>
-                <li>
-                    <a id="txtTest" href= "../test.html" class="a-btn nav">Test</a>
-                </li>
-                <li>
-                    <a id="txtStatus" href= "../status.html" class="a-btn nav">Status</a>
-                </li>
-                <li>
-                    <a id = "txtFaq" href="../faq.html" class ="a-btn nav">FAQ</a>
-                </li>
-
-                <li>
-                    <a id = "txtAbout" href="../about.html" class ="a-btn nav">About</a>
-                </li>
-
-                <li>
-                    <a id = "txtContact" href="../contact.html" class ="a-btn nav">Contact</a>
-                </li>
-                <li>
-                    <a id="btnLogout" class = "btn btn-warning disabled hide">
-                        Logout
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div id="basicNav">
-            <a id="userTest" class="" href="../test.html">
-                <img  id="imgUserButton" src="../images/test.png" class="icon" >
-            </a>
-            <a id="userNotifications" class=" " href="#">
-                <img  id="imgUserButton" src="../images/notifications.png"  class="icon" >
-            </a>
-            <a id="userAccount" class=" " href="../account.html">
-                <img  id="imgUserButton" src="../images/logo_user.png"  class="icon" >
+        <div id="btnHome">
+            <a id="linkHome" href="../index.html">
+                <img id="imgHome" src="../images/home.png" class="icon">
             </a>
         </div>
-
         <div id="searchBox" class="">
             <input id="searchInput" type:="text"  class="disabled" placeholder="Search Disabled...">
             <btn id="btnSearch" class="btn btn-default fa fa-search disabled"></button>
         </div>
+        <div id="basicNav">
+            <a id="userTest" class="" href="../test.html">
+                <img  id="imgUserButton" src="../images/test.png" class="icon" title="Menu Test">
+            </a>
+            <a id="userNotifications" class=" " href="#">
+                <img  id="imgUserButton" src="../images/notifications.png"  class="icon" title="Notifications">
+            </a>
+            <a id="userAccount" class=" " src="../images/logo_user.png" href="../account.html" title="Account">
+                <img  id="imgUserButton" src="../images/logo_user.png"  class="icon" >
+            </a>
+            <div id="dropDownNav">
+                <div>
+                    <a id="menuButton"onclick="dropNav()" title="Menu">&#9776;</a>
+                    <div id="arrow" class="hide">
+                        &#9652;
+                    </div>
+                </div>
+                    <div id="dropDownBox" class="">
+                        <a id="btnLogin" class="btn menu-links" href="../index.html">Login</a>
+                        <a id="txtDatabase" class="btn menu-links" href= "../database_management.html">Database</a>
+                        <a id="txtTest" class="btn menu-links" href= "../test.html">Test</a>
+                        <a id="txtStatus" class="btn menu-links" href= "../status.html">Status</a>
+                        <a id = "txtFaq" class="btn menu-links" href="../faq.html">FAQ</a>
+                        <a id = "txtAbout" class="btn menu-links" href="../about.html">About</a>
+                        <a id = "txtContact" class="btn menu-links" href="../contact.html">Contact</a>
+                    </div>
+            </div>
 
-
-
+        </div>
 
     </header>
     <button id="btnAddNewRow" class="btn " onclick="addRow()">Add new TODO</button>
     <!--Shown if Logged In-->
     <div id="currentPage">
         <h1 id="txtRoute">/Route (current page)</h1>
-        <div id="txtContent">
+        <div id="txtContent" class="hide">
             <table id="myTable">
                 <tr id="tableHeader">
-                    <th class="tblColumnTodo" width="140px;">
+                    <th class="tblColumnTodo" >
                         Template TODOs
                     </th>
 
-                    <th width="350px">
+                    <th >
                         Description
                     </th>
 
-                    <th width="140px">
+                    <th>
                         Action
                     </th>
 
@@ -249,7 +222,7 @@
                             4. If no changes are made, no alert window, and editing features are toggled off.<br>
                             5. If changes are made and confirmed, changes are submitted and made.<br>
                             6. <strong>Delete</strong> button prompts <em>"Are you sure you want to delete TODO:{{content}}?"</em> window.<br>
-                            7. That window submits or cancels the delete request.
+                            7. That window submits or cancels the delete request.<br>
                             8. <a href="https://codepen.io/peternguyen/pen/hICga">Recommendation</a>
                         </span>
                         <span>
@@ -382,24 +355,40 @@
     </footer>
     <!--This will be the base script to load after authentication is done.
         It should handle everything in between I guess-->
-    <script id="scrptDropDown" type="text/javascript">
-    	$("#nav").addClass("js").before('<div id="menu">&#9776;</div>');
-            $("#nav").toggle();
-    	$("#menu").click( function(){
-            $("#nav").toggle();
-            $("#nav").removeAttr("style");
-    	});
-         $("#dropDown").hover( function(){
-             $("#nav").removeAttr("style");
-             $("#nav").toggle();
-    	});
-    	// $(window).resize(function(){
-    	// 	if(window.innerWidth > 768) {
-    	// 		$("#nav").removeAttr("style");
-        //             $("#nav").toggle();
-    	// 	}
-    	// });
+    <script>;
+    document.getElementById('menuButton').onclick = showDropDown;
+
+    function showDropDown(e){
+         document.getElementById('menuButton').onclick = function(){};
+         if(e.stopPropagation)
+             e.stopPropagation();   // W3C model
+         else
+             e.cancelBubble = true; // IE model
+         document.getElementById("arrow").classList.remove("hide");
+         document.getElementById("dropDownBox").style.display = "inline-block";
+         document.onclick = function(e){
+             var ele = document.elementFromPoint(e.clientX, e.clientY);
+             if(ele == document.getElementById("menuButton")){
+                 document.getElementById("arrow").classList.add("hide");
+                 hideDropDown();
+                 return;
+             }
+             do{
+                 if(ele == document.getElementById("dropDownBox"))
+                     return;
+             }while(ele = ele.parentNode);
+             document.getElementById("arrow").classList.add("hide");
+             hideDropDown();
+         };
+    }
+
+    function hideDropDown(){
+        document.onclick = function(){};
+        document.getElementById("dropDownBox").style.display = "none";
+        document.getElementById('menuButton').onclick = showDropDown;
+    }
     </script>
-    <script id="scrptMain" type="text/javascript" src="../scripts/quizinaire.js"></script>
+    <script id="scrptMain" type="text/javascript" src="../scripts/quizinaire.js">
+    </script>
 </body>
 </html>
