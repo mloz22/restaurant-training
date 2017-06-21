@@ -3,12 +3,11 @@
 <head>
     <title>Quiz Template</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/table_design.css">
-    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/header-footer-v2.css">
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -24,7 +23,7 @@
         </div>
         <div id="searchBox" class="">
 
-            <input id="searchInput" type:="text"  class="searchBar " placeholder="Search Disabled...">
+            <input id="searchInput" type:="text"  class="searchBar" placeholder="Search Disabled...">
             <button id="btnSearch" class="btn btn-default fa fa-search disabled"></button>
 
         </div>
@@ -38,19 +37,22 @@
             <a id="userAccount" class=" " src="../images/logo_user.png" href="../account.html" title="Account">
                 <img  id="imgUserButton" src="../images/logo_user.png"  class="icon" >
             </a>
-
-            <div id="dropDownNav" class="dropdown ">
-                <a id="menuButton" class="dropdown-toggle" data-toggle="dropdown" type="button"
-                    aria-haspopup="true" aria-expanded="true" title="Menu">&#9776;</a>
-                <ul class="dropdown-menu pull-right dropdown-caret col-xs-12 col-sm-12">
-                    <li><a id="btnLogin" class="btn menu-links dropdown-header" href="../index.html">Login</a></li>
-                    <li><a id="txtDatabase" class="btn menu-links dropdown-header" href= "../database_management.html">Database</a></li>
-                    <li><a id="txtTest" class="btn menu-links dropdown-header" href= "../test.html">Test</a></li>
-                    <li><a id="txtStatus" class="btn menu-links dropdown-header" href= "../status.html">Status</a></li>
-                    <li><a id = "txtFaq" class="btn menu-links dropdown-header" href="../faq.html">FAQ</a></li>
-                    <li><a id = "txtAbout" class="btn menu-links dropdown-header" href="../about.html">About</a></li>
-                    <li><a id = "txtContact" class="btn menu-links dropdown-header" href="../contact.html">Contact</a></li>
-                </ul>
+            <div id="dropDownNav">
+                <div>
+                    <a id="menuButton"onclick="dropNav()" title="Menu">&#9776;</a>
+                    <div id="arrow" class="hide">
+                        &#9652;
+                    </div>
+                </div>
+                    <div id="dropDownBox" class="">
+                        <a id="btnLogin" class="btn menu-links" href="../index.html">Login</a>
+                        <a id="txtDatabase" class="btn menu-links" href= "../database_management.html">Database</a>
+                        <a id="txtTest" class="btn menu-links" href= "../test.html">Test</a>
+                        <a id="txtStatus" class="btn menu-links" href= "../status.html">Status</a>
+                        <a id = "txtFaq" class="btn menu-links" href="../faq.html">FAQ</a>
+                        <a id = "txtAbout" class="btn menu-links" href="../about.html">About</a>
+                        <a id = "txtContact" class="btn menu-links" href="../contact.html">Contact</a>
+                    </div>
             </div>
 
         </div>
@@ -353,6 +355,42 @@
             </a>
         </div>
     </footer>
+    <!--This will be the base script to load after authentication is done.
+        It should handle everything in between I guess-->
+    <script>;
+    document.getElementById('menuButton').onclick = showDropDown;
 
+    function showDropDown(e){
+         document.getElementById('menuButton').onclick = function(){};
+         if(e.stopPropagation)
+             e.stopPropagation();   // W3C model
+         else
+             e.cancelBubble = true; // IE model
+         document.getElementById("arrow").classList.remove("hide");
+         document.getElementById("dropDownBox").style.display = "inline-block";
+         document.onclick = function(e){
+             var ele = document.elementFromPoint(e.clientX, e.clientY);
+             if(ele == document.getElementById("menuButton")){
+                 document.getElementById("arrow").classList.add("hide");
+                 hideDropDown();
+                 return;
+             }
+             do{
+                 if(ele == document.getElementById("dropDownBox"))
+                     return;
+             }while(ele = ele.parentNode);
+             document.getElementById("arrow").classList.add("hide");
+             hideDropDown();
+         };
+    }
+
+    function hideDropDown(){
+        document.onclick = function(){};
+        document.getElementById("dropDownBox").style.display = "none";
+        document.getElementById('menuButton').onclick = showDropDown;
+    }
+    </script>
+    <script id="scrptMain" type="text/javascript" src="../scripts/quizinaire.js">
+    </script>
 </body>
 </html>

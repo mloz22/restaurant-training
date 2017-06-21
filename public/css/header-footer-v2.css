@@ -148,13 +148,6 @@ TOP - BOTTOM / LEFT - RIGHT
             padding-right: 0px;
             padding-left: 0px;
         }
-        .dropdown-menu{
-            font-size: 22pt;
-            min-width:300px;
-            width: 100%;
-        }
-
-
     }
     #searchInput{
         flex: auto;
@@ -200,10 +193,9 @@ TOP - BOTTOM / LEFT - RIGHT
     }
     #userAccount{
         display: inline-block;
-        position:relative;
+        position: relative;
         margin-right: 15px;
         text-decoration: none;
-        z-index: 10;
     }
 
     #userAccount{
@@ -219,18 +211,15 @@ TOP - BOTTOM / LEFT - RIGHT
         cursor: pointer;
         margin-top: 0;
         margin-right: 0;
-        z-index: 0;
     }
     #menuButton{
         background:none;
-        display: inline-block;
-        position: static;
-        float: right;
+        display: block;
+        position: relative;
         margin-right: 20px;
         color: #000000;
         text-decoration: none;
         font-size: 24pt;
-
     }
     #arrow{
         top: 27px;
@@ -240,24 +229,18 @@ TOP - BOTTOM / LEFT - RIGHT
         color: black;
         z-index: -1;
     }
-    .dropdown-menu {
-
+    #dropDownBox {
+        display: none;
+        width: 110px;
+        float: right;
+        position: fixed;
+        right:15px;
         background-color: #ffffff;
         border: 2px solid black;
     }
-    .dropdown-menu:after {
-      position:inherit;
-      top: -11px;
-      right: 22px;
-      border-right: 10px solid transparent;
-      border-bottom: 9px solid #fff;
-      border-left: 10px solid transparent;
-      content:'';
-    }
-
     .menu-links{
         font-size: 16px;
-
+        width: 100%;
     }
 
 /*  Content */
